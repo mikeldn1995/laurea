@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Art Gallery - Browse our complete collection of artworks including abstract paintings, landscapes, portraits, and contemporary pieces.">
+    <title>My Art Gallery - Full Gallery</title>
+    <!-- Google Fonts via link tag -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with fixed positioning -->
+    <header role="banner">
+        <h1>My Art Gallery</h1>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="gallery.html" aria-current="page">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content with static positioning -->
+    <main id="main-content" role="main">
+        <!-- Gallery Introduction -->
+        <section class="hero" aria-labelledby="gallery-hero-heading">
+            <h2 id="gallery-hero-heading">Full Art Collection</h2>
+            <p>Explore our complete collection of artworks. Each piece has been carefully selected to represent the diverse world of artistic expression. From vibrant abstracts to serene landscapes, from detailed portraits to bold contemporary pieces - there's something for every art lover.</p>
+        </section>
+
+        <!-- Gallery Grid with Inline-Block Display -->
+        <section class="gallery-grid" aria-labelledby="collection-heading">
+            <h2 id="collection-heading" class="sr-only">Art Collection</h2>
+            
+            <!-- Artwork Item 1 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-1-title">
+                <img src="images/artwork1.jpg" alt="Abstract artwork featuring vibrant colors and geometric shapes creating a dreamlike composition" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Abstract Dreams</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-1-title">Abstract Dreams</h4>
+                    <p>A vibrant exploration of color and form that challenges traditional perspectives.</p>
+                </div>
+            </article>
+
+            <!-- Artwork Item 2 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-2-title">
+                <img src="images/artwork2.jpg" alt="Mountain landscape painting showing majestic peaks at dawn with dramatic lighting" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Mountain Vista</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-2-title">Mountain Vista</h4>
+                    <p>Captures the majestic beauty of mountain ranges at dawn with remarkable detail.</p>
+                </div>
+            </article>
+
+            <!-- Artwork Item 3 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-3-title">
+                <img src="images/artwork3.jpg" alt="Portrait painting revealing human emotion through masterful artistic technique" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Portrait Study</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-3-title">Portrait Study</h4>
+                    <p>An intimate portrait that reveals the depth of human emotion through masterful technique.</p>
+                </div>
+            </article>
+
+            <!-- Artwork Item 4 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-4-title">
+                <img src="images/artwork4.jpg" alt="Modern contemporary art piece reflecting dynamic aspects of contemporary life and culture" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Modern Expression</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-4-title">Modern Expression</h4>
+                    <p>Contemporary art that reflects the dynamic nature of modern life and culture.</p>
+                </div>
+            </article>
+
+            <!-- Artwork Item 5 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-5-title">
+                <img src="images/artwork5.jpg" alt="Serene natural landscape painting bringing peace and tranquility" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Nature's Beauty</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-5-title">Nature's Beauty</h4>
+                    <p>A serene depiction of natural landscapes that brings peace and tranquility.</p>
+                </div>
+            </article>
+
+            <!-- Artwork Item 6 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-6-title">
+                <img src="images/artwork6.jpg" alt="Urban cityscape painting capturing the energy and rhythm of city life with bold strokes" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Urban Life</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-6-title">Urban Life</h4>
+                    <p>Captures the energy and rhythm of city life with bold strokes and vibrant colors.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Featured Artwork with Sticky Positioning -->
+        <section class="featured-section" aria-labelledby="spotlight-heading">
+            <div class="featured-artwork">
+                <h3 id="spotlight-heading">Artist Spotlight</h3>
+                <p>This month, we're highlighting the exceptional work of our featured artist. Their unique perspective and masterful technique have earned them recognition in the art community. The pieces displayed here represent months of dedication and artistic vision. The use of color, composition, and technique demonstrates true mastery of the craft. As you scroll through the gallery, this section will remain visible, showcasing the importance we place on supporting talented artists and their creative journeys.</p>
+            </div>
+        </section>
+
+        <!-- Additional Gallery Items -->
+        <section class="gallery-grid" aria-label="Additional artworks">
+            <!-- Artwork Item 7 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-7-title">
+                <img src="images/artwork7.jpg" alt="Ocean seascape painting showing the power and beauty of waves in perfect harmony" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Ocean Waves</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-7-title">Ocean Waves</h4>
+                    <p>The power and beauty of the ocean captured in a moment of perfect harmony.</p>
+                </div>
+            </article>
+
+            <!-- Artwork Item 8 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-8-title">
+                <img src="images/artwork8.jpg" alt="Floral arrangement artwork celebrating nature's delicate beauty with artistic precision" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Floral Arrangement</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-8-title">Floral Arrangement</h4>
+                    <p>Delicate flowers arranged with artistic precision, celebrating nature's delicate beauty.</p>
+                </div>
+            </article>
+
+            <!-- Artwork Item 9 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-9-title">
+                <img src="images/artwork9.jpg" alt="Abstract color composition where colors dance together in perfect harmony and rhythm" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Color Symphony</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-9-title">Color Symphony</h4>
+                    <p>An abstract composition where colors dance together in perfect harmony and rhythm.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section" aria-label="Inspirational quote">
+            <blockquote>
+                "Every artist was first an amateur. The purpose of art is washing the dust of daily life off our souls."
+            </blockquote>
+            <cite>— Pablo Picasso</cite>
+        </section>
+
+        <!-- About Section with Float -->
+        <section class="about-section" aria-labelledby="gallery-info-heading">
+            <h2 id="gallery-info-heading">Gallery Information</h2>
+            <img src="images/gallery-interior.jpg" alt="Interior view of the art gallery showing elegant exhibition space with artwork displays" class="about-image" loading="lazy">
+            <div class="about-text">
+                <p>Our gallery space provides the perfect environment to appreciate art. With carefully designed lighting and spacious layouts, each artwork is given the attention it deserves. We regularly update our collection, bringing in new pieces and rotating exhibitions to keep the gallery fresh and exciting.</p>
+                <p>Whether you're looking to add to your personal collection or simply enjoy viewing beautiful art, we invite you to spend time exploring our gallery. Our knowledgeable staff is always available to answer questions and provide insights about the artworks on display. We believe that art should be accessible to everyone, and we're committed to creating a welcoming atmosphere for all visitors.</p>
+                <p>In addition to our permanent collection, we host rotating exhibitions throughout the year. These special shows feature works from both established masters and emerging talents, providing visitors with a diverse and ever-changing artistic experience. We also offer private viewings and consultation services for serious collectors.</p>
+            </div>
+            <div class="clearfix"></div>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" aria-labelledby="visit-heading">
+            <div class="contact-info">
+                <h3 id="visit-heading">Plan Your Visit</h3>
+                <p>We're open Tuesday through Sunday, 10 AM to 6 PM</p>
+                <p>123 Art Street, Cultural District</p>
+                <p>Email: <a href="mailto:info@myartgallery.com" aria-label="Send email to info@myartgallery.com">info@myartgallery.com</a></p>
+                <p>Phone: <a href="tel:+15551234567" aria-label="Call us at 555-123-4567">(555) 123-4567</a></p>
+                <a href="index.html" class="btn" aria-label="Return to home page">Return to Home</a>
+                <a href="mailto:info@myartgallery.com" class="btn btn-secondary" aria-label="Schedule a visit via email">Schedule a Visit</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2024 My Art Gallery. All rights reserved.</p>
+        <p>Return to <a href="index.html" aria-label="Navigate to home page">home page</a> to learn more about our gallery.</p>
+    </footer>
+</body>
+</html>

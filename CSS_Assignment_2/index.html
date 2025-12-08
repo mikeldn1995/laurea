@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="My Art Gallery - Discover exceptional artworks from talented artists around the world. Explore our curated collection of paintings, sculptures, and contemporary art.">
+    <title>My Art Gallery - Home</title>
+    <!-- Google Fonts via link tag -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to main content link for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <!-- Header with fixed positioning -->
+    <header role="banner">
+        <h1>My Art Gallery</h1>
+        <nav role="navigation" aria-label="Main navigation">
+            <ul>
+                <li><a href="index.html" aria-current="page">Home</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main content with static positioning -->
+    <main id="main-content" role="main">
+        <!-- Hero Section -->
+        <section class="hero" aria-labelledby="hero-heading">
+            <h2 id="hero-heading">Welcome to Our Collection</h2>
+            <p>Discover a curated selection of exceptional artworks from talented artists around the world. Each piece in our gallery tells a unique story and represents the pinnacle of artistic expression across various styles and mediums.</p>
+        </section>
+
+        <!-- Featured Artwork with Sticky Positioning -->
+        <section class="featured-section" aria-labelledby="featured-heading">
+            <div class="featured-artwork">
+                <h3 id="featured-heading">Featured Artwork of the Month</h3>
+                <p>This month, we are proud to feature "Sunset Over Mountains" - a breathtaking landscape that captures the serene beauty of nature at dusk. The artist masterfully uses warm colors and soft brushstrokes to create a sense of tranquility and wonder. This piece demonstrates exceptional use of light and shadow, making it a standout work in our collection. The composition draws the viewer's eye across the canvas, from the vibrant sky to the peaceful valley below.</p>
+            </div>
+        </section>
+
+        <!-- Gallery Grid with Inline-Block Display -->
+        <section class="gallery-grid" aria-labelledby="gallery-heading">
+            <h2 id="gallery-heading">Featured Collection</h2>
+            
+            <!-- Artwork Item 1 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-1-title">
+                <img src="images/artwork1.jpg" alt="Abstract artwork featuring vibrant colors and geometric shapes creating a dreamlike composition" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Abstract Dreams</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-1-title">Abstract Dreams</h4>
+                    <p>A vibrant exploration of color and form that challenges traditional perspectives.</p>
+                </div>
+            </article>
+
+            <!-- Artwork Item 2 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-2-title">
+                <img src="images/artwork2.jpg" alt="Mountain landscape painting showing majestic peaks at dawn with dramatic lighting" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Mountain Vista</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-2-title">Mountain Vista</h4>
+                    <p>Captures the majestic beauty of mountain ranges at dawn with remarkable detail.</p>
+                </div>
+            </article>
+
+            <!-- Artwork Item 3 - Relative Positioning -->
+            <article class="artwork-item" role="article" aria-labelledby="artwork-3-title">
+                <img src="images/artwork3.jpg" alt="Portrait painting revealing human emotion through masterful artistic technique" loading="lazy">
+                <div class="artwork-label" aria-hidden="true">Portrait Study</div>
+                <div class="artwork-info">
+                    <h4 id="artwork-3-title">Portrait Study</h4>
+                    <p>An intimate portrait that reveals the depth of human emotion through masterful technique.</p>
+                </div>
+            </article>
+        </section>
+
+        <!-- Quote Section -->
+        <section class="quote-section" aria-label="Inspirational quote">
+            <blockquote>
+                "Art is not what you see, but what you make others see."
+            </blockquote>
+            <cite>— Edgar Degas</cite>
+        </section>
+
+        <!-- About Section with Float -->
+        <section class="about-section" aria-labelledby="about-heading">
+            <h2 id="about-heading">About the Gallery</h2>
+            <img src="images/gallery-interior.jpg" alt="Interior view of the art gallery showing elegant exhibition space with artwork displays" class="about-image" loading="lazy">
+            <div class="about-text">
+                <p>My Art Gallery was established with a passion for bringing exceptional art to art enthusiasts and collectors. We believe that art has the power to inspire, provoke thought, and bring beauty into our lives. Our collection features works from both established and emerging artists, covering a wide range of styles from classical to contemporary.</p>
+                <p>We are committed to supporting artists and making art accessible to everyone. Whether you're a seasoned collector or someone just beginning to explore the world of art, we welcome you to browse our collection and discover pieces that resonate with you. Our gallery space provides the perfect environment to appreciate each artwork's unique qualities.</p>
+                <p>Our team of curators carefully selects each piece, ensuring that our collection represents the highest standards of artistic excellence. We regularly host exhibitions and events that bring together artists, collectors, and art lovers from around the community.</p>
+            </div>
+            <div class="clearfix"></div>
+        </section>
+
+        <!-- Exhibition Section -->
+        <section class="exhibition-section" aria-labelledby="exhibitions-heading">
+            <h3 id="exhibitions-heading">Upcoming Exhibitions</h3>
+            <ul class="exhibition-list" role="list">
+                <li role="listitem"><strong>Modern Masters:</strong> A collection of contemporary works from leading artists. Opening reception on December 15th at 6 PM.</li>
+                <li role="listitem"><strong>Nature's Canvas:</strong> Landscape paintings that celebrate the beauty of the natural world. Exhibition runs through January 2025.</li>
+                <li role="listitem"><strong>Abstract Expressions:</strong> Bold and vibrant abstract works that push the boundaries of traditional art. Special evening viewing on December 20th.</li>
+            </ul>
+        </section>
+
+        <!-- Contact Section -->
+        <section class="contact-section" aria-labelledby="contact-heading">
+            <div class="contact-info">
+                <h3 id="contact-heading">Visit Us</h3>
+                <p>We're open Tuesday through Sunday, 10 AM to 6 PM</p>
+                <p>123 Art Street, Cultural District</p>
+                <p>Email: <a href="mailto:info@myartgallery.com" aria-label="Send email to info@myartgallery.com">info@myartgallery.com</a></p>
+                <p>Phone: <a href="tel:+15551234567" aria-label="Call us at 555-123-4567">(555) 123-4567</a></p>
+                <a href="gallery.html" class="btn" aria-label="View our full gallery collection">View Full Gallery</a>
+                <a href="mailto:info@myartgallery.com" class="btn btn-secondary" aria-label="Contact us via email">Contact Us</a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <p>&copy; 2024 My Art Gallery. All rights reserved.</p>
+        <p>Visit our <a href="gallery.html" aria-label="Navigate to full gallery page">full gallery</a> to explore our complete collection.</p>
+    </footer>
+</body>
+</html>

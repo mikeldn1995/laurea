@@ -1,0 +1,801 @@
+/* ============================================
+   CSS Hands-on Assignment 2 - Art Gallery
+   External Stylesheet
+   ============================================ */
+
+/* ============================================
+   Web Fonts - Google Fonts Import
+   ============================================ */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Open+Sans:wght@300;400;600;700&display=swap');
+
+/* ============================================
+   CSS Reset & Base Styles
+   ============================================ */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* ============================================
+   Skip Link for Accessibility
+   ============================================ */
+.skip-link {
+    position: absolute; /* Absolute positioning */
+    top: -40px; /* Top offset */
+    left: 0; /* Left offset */
+    background-color: #8B4513; /* Hexadecimal color */
+    color: white; /* Named color */
+    padding: 8px 16px;
+    text-decoration: none;
+    z-index: 10000; /* Z-index */
+    font-weight: 600; /* Numeric value */
+    text-transform: uppercase; /* Text transform */
+}
+
+.skip-link:focus {
+    top: 0; /* Top offset */
+}
+
+/* Screen reader only class for accessibility */
+.sr-only {
+    position: absolute; /* Absolute positioning */
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border-width: 0;
+}
+
+/* ============================================
+   Typography - Font Family with Fallback Stack
+   ============================================ */
+body {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif; /* Fallback font stack */
+    font-weight: 400; /* Numeric value */
+    line-height: 1.7; /* Line height for readability */
+    color: rgb(34, 34, 34); /* RGB color format */
+    background-color: #FAFAFA; /* Hexadecimal color */
+    min-height: 100vh;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, 'Times New Roman', serif; /* Fallback font stack */
+    letter-spacing: 1.5px; /* Letter spacing */
+    word-spacing: 2px; /* Word spacing */
+}
+
+h1 {
+    font-weight: 900; /* Numeric value */
+    text-transform: uppercase; /* Text transform */
+    font-style: normal;
+    text-align: center; /* Text alignment */
+}
+
+h2 {
+    font-weight: bold; /* Keyword value */
+    font-style: italic; /* Font style */
+    text-align: center; /* Text alignment */
+    color: #8B4513; /* Hexadecimal color */
+}
+
+h3 {
+    font-weight: 700; /* Numeric value */
+    text-align: left; /* Text alignment */
+    color: rgb(60, 60, 60); /* RGB color */
+}
+
+/* ============================================
+   Header - Fixed Positioning
+   ============================================ */
+/* This header uses fixed positioning to stay at the top when scrolling */
+header {
+    position: fixed; /* Fixed positioning */
+    top: 0; /* Top offset */
+    left: 0; /* Left offset */
+    width: 100%;
+    z-index: 1000; /* Z-index to keep header above other content */
+    background-color: rgba(139, 69, 19, 0.98); /* RGBA with opacity */
+    padding: 25px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    backdrop-filter: blur(10px);
+}
+
+header h1 {
+    color: hsl(45, 100%, 90%); /* HSL color format */
+    margin-bottom: 15px;
+    font-size: clamp(1.8rem, 4vw, 2.5rem); /* Responsive font size */
+}
+
+/* ============================================
+   Navigation - Inline Display
+   ============================================ */
+/* Navigation links use inline display for horizontal layout */
+nav {
+    text-align: center; /* Text alignment */
+    padding: 15px 0;
+    background-color: #8B4513; /* Hexadecimal color */
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav li {
+    display: inline; /* Inline display for navigation items */
+    margin: 0 30px;
+}
+
+nav a {
+    color: white; /* Named color */
+    text-decoration: none;
+    font-weight: 600; /* Numeric value */
+    text-transform: uppercase; /* Text transform */
+    letter-spacing: 2px; /* Letter spacing */
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+    display: inline-block; /* Inline-block display */
+}
+
+nav a:hover,
+nav a:focus {
+    color: yellow; /* Named color */
+    background-color: rgba(255, 255, 255, 0.1); /* RGBA with opacity */
+    outline: 2px solid yellow; /* Focus indicator */
+    outline-offset: 2px;
+}
+
+nav a:focus-visible {
+    outline: 3px solid yellow; /* Focus indicator */
+    outline-offset: 3px;
+}
+
+/* ============================================
+   Main Content - Static Positioning
+   ============================================ */
+/* Main content uses static positioning (default) */
+main {
+    position: static; /* Static positioning */
+    margin-top: 200px; /* Space for fixed header */
+    padding: 50px clamp(20px, 5vw, 50px);
+    max-width: 1400px;
+    margin-left: auto;
+    margin-right: auto;
+    min-height: calc(100vh - 200px);
+}
+
+/* ============================================
+   Hero Section - Block Display
+   ============================================ */
+/* Hero section uses block display */
+.hero {
+    display: block; /* Block display */
+    background: linear-gradient(135deg, hsla(210, 50%, 95%, 0.9), hsla(30, 30%, 92%, 0.9)); /* HSLA with opacity */
+    padding: clamp(40px, 8vw, 60px) clamp(30px, 6vw, 40px);
+    margin-bottom: 60px;
+    border-radius: 12px;
+    text-align: center; /* Text alignment */
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.8s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hero h2 {
+    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 5vw, 2.5rem);
+}
+
+.hero p {
+    font-style: italic; /* Font style */
+    line-height: 2; /* Line height */
+    color: rgb(50, 50, 50); /* RGB color */
+    font-size: clamp(1rem, 2.5vw, 1.2rem);
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ============================================
+   Featured Artwork - Sticky Positioning
+   ============================================ */
+/* This featured artwork uses sticky positioning */
+.featured-section {
+    margin: 80px 0;
+}
+
+.featured-artwork {
+    position: sticky; /* Sticky positioning */
+    top: 200px; /* Top offset when sticky */
+    background-color: #E8D5B7; /* Hexadecimal color */
+    padding: clamp(30px, 5vw, 40px);
+    border-radius: 12px;
+    margin-bottom: 40px;
+    z-index: 100; /* Z-index */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease;
+}
+
+.featured-artwork:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+}
+
+.featured-artwork h3 {
+    color: #8B4513; /* Hexadecimal color */
+    margin-bottom: 20px;
+    text-align: center; /* Text alignment */
+    font-size: clamp(1.3rem, 3vw, 1.8rem);
+}
+
+.featured-artwork p {
+    color: rgb(70, 70, 70); /* RGB color */
+    line-height: 1.8; /* Line height */
+    text-align: justify; /* Text alignment */
+    font-weight: 400; /* Numeric value */
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+/* ============================================
+   Gallery Grid - Inline-Block Display
+   ============================================ */
+/* Gallery images use inline-block display for grid layout */
+.gallery-grid {
+    text-align: center; /* Text alignment */
+    margin: 60px 0;
+}
+
+.gallery-grid h2 {
+    margin-bottom: 40px;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+}
+
+.artwork-item {
+    display: inline-block; /* Inline-block display */
+    position: relative; /* Relative positioning for absolute children */
+    margin: 25px;
+    width: min(320px, 100% - 50px);
+    max-width: 400px;
+    vertical-align: top;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s ease;
+}
+
+.artwork-item:hover,
+.artwork-item:focus-within {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.artwork-item img {
+    width: 100%;
+    height: auto;
+    display: block; /* Block display */
+    transition: transform 0.3s ease;
+}
+
+.artwork-item:hover img {
+    transform: scale(1.05);
+}
+
+/* ============================================
+   Artwork Labels - Absolute Positioning
+   ============================================ */
+/* This artwork label uses absolute positioning */
+.artwork-label {
+    position: absolute; /* Absolute positioning */
+    bottom: 15px; /* Bottom offset */
+    left: 15px; /* Left offset */
+    right: 15px; /* Right offset */
+    background-color: rgba(0, 0, 0, 0.75); /* RGBA with opacity */
+    color: white; /* Named color */
+    padding: 12px 16px;
+    border-radius: 6px;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    font-weight: 600; /* Numeric value */
+    z-index: 10; /* Z-index for layering */
+    text-align: center; /* Text alignment */
+    text-transform: uppercase; /* Text transform */
+    letter-spacing: 1px; /* Letter spacing */
+    transition: background-color 0.3s ease;
+}
+
+.artwork-item:hover .artwork-label {
+    background-color: rgba(0, 0, 0, 0.9); /* RGBA with opacity */
+}
+
+/* ============================================
+   Artwork Info Cards - Relative Positioning
+   ============================================ */
+/* This artwork info card uses relative positioning */
+.artwork-info {
+    position: relative; /* Relative positioning */
+    padding: 20px;
+    background-color: white;
+}
+
+.artwork-info h4 {
+    color: #A52A2A; /* Hexadecimal color */
+    font-weight: 700; /* Numeric value */
+    margin-bottom: 10px;
+    text-align: left; /* Text alignment */
+    font-size: clamp(1.1rem, 2.5vw, 1.3rem);
+}
+
+.artwork-info p {
+    color: rgb(80, 80, 80); /* RGB color */
+    line-height: 1.6; /* Line height */
+    text-align: left; /* Text alignment */
+    font-style: italic; /* Font style */
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+/* ============================================
+   About Section with Float
+   ============================================ */
+/* Float example for image wrapping text */
+.about-section {
+    margin: 60px 0;
+    padding: clamp(30px, 5vw, 40px);
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.about-section h2 {
+    margin-bottom: 25px;
+    font-size: clamp(1.8rem, 4vw, 2.2rem);
+}
+
+.about-image {
+    float: left; /* Float left */
+    margin: 0 30px 20px 0;
+    width: min(300px, 100%);
+    max-width: 400px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.about-image:hover {
+    transform: scale(1.02);
+}
+
+.about-text {
+    overflow: hidden; /* Clear float */
+    color: rgb(60, 60, 60); /* RGB color */
+    line-height: 1.8; /* Line height */
+    text-align: justify; /* Text alignment */
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+.about-text p {
+    margin-bottom: 15px;
+}
+
+.about-text::after {
+    content: "";
+    display: table;
+    clear: both; /* Clear float */
+}
+
+/* Clear float example */
+.clearfix {
+    clear: both; /* Clear float */
+}
+
+/* ============================================
+   Quote Section - Natural Color Usage
+   ============================================ */
+.quote-section {
+    margin: 60px 0;
+    padding: clamp(40px, 6vw, 50px);
+    background-color: hsl(30, 25%, 95%); /* HSL color format */
+    border-left: 5px solid #A52A2A; /* Hexadecimal color */
+    border-radius: 8px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.quote-section:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.quote-section blockquote {
+    font-style: italic; /* Font style */
+    font-size: clamp(1.1rem, 3vw, 1.3rem);
+    line-height: 1.9; /* Line height */
+    color: rgb(40, 40, 40); /* RGB color */
+    text-align: center; /* Text alignment */
+    margin: 0;
+    font-weight: 400; /* Numeric value */
+}
+
+.quote-section cite {
+    display: block;
+    margin-top: 20px;
+    text-align: right; /* Text alignment */
+    color: rgba(139, 69, 19, 0.8); /* RGBA with opacity */
+    font-weight: 600; /* Numeric value */
+    font-style: normal;
+    text-transform: uppercase; /* Text transform */
+    letter-spacing: 1px; /* Letter spacing */
+    font-size: clamp(0.85rem, 2vw, 1rem);
+}
+
+/* ============================================
+   Contact Section - Natural Color Usage
+   ============================================ */
+.contact-section {
+    margin: 60px 0;
+    padding: clamp(30px, 5vw, 40px);
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.contact-info {
+    text-align: center; /* Text alignment */
+}
+
+.contact-info h3 {
+    color: #8B4513; /* Hexadecimal color */
+    margin-bottom: 25px;
+    text-align: center; /* Text alignment */
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+.contact-info p {
+    color: rgb(70, 70, 70); /* RGB color */
+    line-height: 1.8; /* Line height */
+    margin: 15px 0;
+    font-weight: 400; /* Numeric value */
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+.contact-info a {
+    color: #A52A2A; /* Hexadecimal color */
+    text-decoration: none;
+    font-weight: 600; /* Numeric value */
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.contact-info a:hover,
+.contact-info a:focus {
+    color: hsl(0, 65%, 45%); /* HSL color format */
+    text-decoration: underline;
+    outline: 2px solid hsl(0, 65%, 45%);
+    outline-offset: 2px;
+}
+
+/* ============================================
+   Button Styles - Natural Color Usage
+   ============================================ */
+.btn {
+    display: inline-block; /* Inline-block display */
+    padding: clamp(12px, 2vw, 15px) clamp(25px, 4vw, 30px);
+    background-color: rgb(139, 69, 19); /* RGB color */
+    color: white; /* Named color */
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 600; /* Numeric value */
+    text-transform: uppercase; /* Text transform */
+    letter-spacing: 1.5px; /* Letter spacing */
+    text-align: center; /* Text alignment */
+    transition: all 0.3s ease;
+    margin: 10px 5px;
+    border: 2px solid transparent;
+    cursor: pointer;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+.btn:hover {
+    background-color: rgba(139, 69, 19, 0.9); /* RGBA with opacity */
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.btn:focus {
+    outline: 3px solid yellow; /* Focus indicator */
+    outline-offset: 3px;
+    background-color: rgba(139, 69, 19, 0.9);
+}
+
+.btn:active {
+    transform: translateY(0);
+}
+
+.btn-secondary {
+    background-color: transparent; /* Transparent */
+    border: 2px solid #8B4513; /* Hexadecimal color */
+    color: #8B4513; /* Hexadecimal color */
+}
+
+.btn-secondary:hover {
+    background-color: hsla(30, 50%, 50%, 0.1); /* HSLA with opacity */
+    border-color: #A52A2A;
+    color: #A52A2A;
+}
+
+.btn-secondary:focus {
+    outline: 3px solid #8B4513;
+    outline-offset: 3px;
+}
+
+/* ============================================
+   Exhibition Section - Natural Typography
+   ============================================ */
+.exhibition-section {
+    margin: 60px 0;
+    padding: clamp(30px, 5vw, 40px);
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.95), rgba(248, 248, 248, 0.95)); /* RGBA with opacity */
+    border-radius: 12px;
+}
+
+.exhibition-section h3 {
+    text-align: center; /* Text alignment */
+    color: #8B4513; /* Hexadecimal color */
+    margin-bottom: 25px;
+    font-size: clamp(1.5rem, 3.5vw, 2rem);
+}
+
+.exhibition-list {
+    list-style: none;
+    padding: 0;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.exhibition-list li {
+    padding: clamp(15px, 3vw, 20px);
+    margin: 15px 0;
+    background-color: white;
+    border-left: 4px solid hsl(30, 50%, 50%); /* HSL color format */
+    border-radius: 4px;
+    color: rgb(50, 50, 50); /* RGB color */
+    line-height: 1.6; /* Line height */
+    transition: all 0.3s ease;
+    font-size: clamp(0.95rem, 2vw, 1.1rem);
+}
+
+.exhibition-list li:hover {
+    transform: translateX(5px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border-left-width: 6px;
+}
+
+.exhibition-list li strong {
+    color: #A52A2A; /* Hexadecimal color */
+    font-weight: bold; /* Keyword value */
+    text-transform: uppercase; /* Text transform */
+    letter-spacing: 1px; /* Letter spacing */
+}
+
+/* ============================================
+   Footer
+   ============================================ */
+footer {
+    background-color: #8B4513; /* Hexadecimal color */
+    color: hsl(45, 100%, 90%); /* HSL color */
+    text-align: center; /* Text alignment */
+    padding: clamp(30px, 5vw, 40px) 20px;
+    margin-top: 80px;
+    font-weight: 400; /* Numeric value */
+    letter-spacing: 1px; /* Letter spacing */
+    line-height: 1.8; /* Line height */
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: clamp(0.9rem, 2vw, 1rem);
+}
+
+footer a {
+    color: yellow; /* Named color */
+    text-decoration: none;
+    font-weight: 600; /* Numeric value */
+    transition: all 0.3s ease;
+    padding: 2px 4px;
+    border-radius: 3px;
+}
+
+footer a:hover,
+footer a:focus {
+    color: white; /* Named color */
+    background-color: rgba(255, 255, 255, 0.1);
+    outline: 2px solid yellow;
+    outline-offset: 2px;
+}
+
+/* ============================================
+   Responsive Design - Tablet
+   ============================================ */
+@media (max-width: 1024px) {
+    main {
+        margin-top: 180px;
+        padding: 40px 25px;
+    }
+    
+    .featured-artwork {
+        top: 180px; /* Top offset when sticky */
+    }
+    
+    .artwork-item {
+        width: min(280px, 100% - 50px);
+        margin: 20px;
+    }
+}
+
+/* ============================================
+   Responsive Design - Mobile
+   ============================================ */
+@media (max-width: 768px) {
+    header {
+        padding: 20px 0;
+    }
+    
+    header h1 {
+        font-size: 1.8rem;
+        margin-bottom: 10px;
+    }
+    
+    nav {
+        padding: 10px 0;
+    }
+    
+    nav li {
+        display: block; /* Block display on mobile */
+        margin: 8px 0;
+    }
+    
+    nav a {
+        display: block;
+        padding: 10px 15px;
+        margin: 0 10px;
+    }
+    
+    main {
+        margin-top: 160px;
+        padding: 30px 20px;
+    }
+    
+    .featured-artwork {
+        position: relative; /* Change to relative on mobile */
+        top: 0; /* Remove sticky on mobile */
+    }
+    
+    .artwork-item {
+        width: 100%;
+        max-width: 100%;
+        margin: 20px 0;
+    }
+    
+    .about-image {
+        float: none; /* Remove float on mobile */
+        display: block;
+        margin: 0 auto 20px;
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .about-text {
+        text-align: left; /* Text alignment */
+    }
+    
+    .hero {
+        padding: 40px 25px;
+    }
+    
+    .quote-section {
+        padding: 30px 20px;
+    }
+    
+    .btn {
+        display: block;
+        width: 100%;
+        margin: 10px 0;
+        max-width: 300px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* ============================================
+   Responsive Design - Small Mobile
+   ============================================ */
+@media (max-width: 480px) {
+    main {
+        margin-top: 140px;
+        padding: 20px 15px;
+    }
+    
+    header h1 {
+        font-size: 1.5rem;
+    }
+    
+    .hero {
+        padding: 30px 20px;
+    }
+    
+    .featured-artwork,
+    .about-section,
+    .contact-section,
+    .exhibition-section {
+        padding: 25px 20px;
+    }
+    
+    .artwork-label {
+        font-size: 0.85rem;
+        padding: 10px 12px;
+    }
+}
+
+/* ============================================
+   Print Styles
+   ============================================ */
+@media print {
+    header {
+        position: static; /* Static positioning for print */
+    }
+    
+    nav {
+        display: none;
+    }
+    
+    main {
+        margin-top: 0;
+    }
+    
+    .artwork-item {
+        page-break-inside: avoid;
+    }
+}
+
+/* ============================================
+   Reduced Motion (Accessibility)
+   ============================================ */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    html {
+        scroll-behavior: auto;
+    }
+}
+
+/* ============================================
+   High Contrast Mode Support
+   ============================================ */
+@media (prefers-contrast: high) {
+    .artwork-label {
+        background-color: black; /* Named color */
+        border: 2px solid white; /* Named color */
+    }
+    
+    .btn {
+        border: 2px solid currentColor;
+    }
+}
