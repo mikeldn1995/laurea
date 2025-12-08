@@ -1,0 +1,1019 @@
+/* ============================================
+   CSS Hands-on Assignment 1 - External Stylesheet
+   This file demonstrates all required CSS selectors,
+   visual rules, and box model properties.
+   ============================================ */
+
+/* ============================================
+   1. RESET DEFAULTS
+   ============================================ */
+
+/* Universal selector to reset browser defaults */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ============================================
+   2. CSS VARIABLES FOR CONSISTENCY
+   ============================================ */
+:root {
+    /* Spacing - standardized values */
+    --spacing-xs: 8px;
+    --spacing-sm: 12px;
+    --spacing-md: 16px;
+    --spacing-lg: 24px;
+    --spacing-xl: 32px;
+    --spacing-xxl: 40px;
+    
+    /* Border radius - consistent values */
+    --radius-sm: 6px;
+    --radius-md: 8px;
+    --radius-lg: 12px;
+    --radius-xl: 16px;
+    
+    /* Colors - improved accessibility (WCAG AA compliant) */
+    --color-primary: #5568d3; /* Better contrast than #667eea */
+    --color-primary-dark: #4455b8;
+    --color-primary-light: #6b7de8;
+    --color-secondary: #6c4a9e;
+    --color-text: #1a1a1a; /* High contrast for accessibility */
+    --color-text-light: #4a4a4a;
+    --color-text-muted: #6b6b6b;
+    --color-bg: #ffffff;
+    --color-bg-light: #f8f9fa;
+    --color-bg-dark: #2c3e50;
+    --color-border: #d1d5db;
+    --color-success: #059669; /* Better contrast green */
+    --color-error: #dc2626; /* Better contrast red */
+    --color-warning: #d97706;
+    
+    /* Shadows - consistent values */
+    --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    
+    /* Typography */
+    --font-size-base: 16px;
+    --font-size-sm: 14px;
+    --font-size-lg: 18px;
+    --font-size-xl: 20px;
+    --font-size-2xl: 24px;
+    --font-size-3xl: 32px;
+    
+    /* Max widths - consistent container sizes */
+    --max-width-sm: 640px;
+    --max-width-md: 768px;
+    --max-width-lg: 1024px;
+    --max-width-xl: 1200px;
+}
+
+/* ============================================
+   3. SELECTORS
+   ============================================ */
+
+/* Type selectors: This ruleset uses type selectors (h1, form, p) to target HTML elements by their tag names */
+h1 {
+    font-size: clamp(2rem, 5vw, 2.5rem);
+    color: #ffffff;
+    margin-bottom: var(--spacing-sm);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    font-weight: 700;
+    letter-spacing: -0.5px;
+}
+
+form {
+    width: 100%;
+    max-width: var(--max-width-md);
+    margin: 0 auto;
+}
+
+p {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text);
+}
+
+/* Class selector: This is a class selector (.form-section) targeting elements with the class "form-section" */
+.form-section {
+    background: linear-gradient(145deg, var(--color-bg) 0%, var(--color-bg-light) 100%);
+    padding: var(--spacing-xxl);
+    margin: var(--spacing-lg) auto;
+    border-radius: var(--radius-xl);
+    border: none;
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+}
+
+.form-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
+}
+
+/* ID selector: This is an ID selector (#main-title) targeting the element with id "main-title" */
+#main-title {
+    text-align: center;
+    font-weight: 700;
+    padding: var(--spacing-md) 0;
+}
+
+/* Multiple class selectors: This ruleset uses multiple class selectors (.green.bold) to apply styles to elements that have both classes */
+.green.bold {
+    color: var(--color-success);
+    font-weight: 700;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+    border-left: 5px solid var(--color-success);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    margin: var(--spacing-lg) 0;
+}
+
+/* Attribute selectors: This ruleset uses attribute selectors (input[type="text"]) to target elements based on their attributes */
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    border: 2px solid var(--color-border);
+    border-radius: var(--radius-md);
+    transition: all 0.3s ease;
+    background-color: var(--color-bg);
+}
+
+input[type="text"]:hover,
+input[type="email"]:hover,
+input[type="password"]:hover,
+input[type="number"]:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(85, 104, 211, 0.1);
+}
+
+/* Attribute selector: This is an attribute selector (img[src*='winter']) targeting images with 'winter' in their src attribute */
+img[src*='winter'] {
+    border: 4px solid var(--color-primary);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-lg);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    width: 100%;
+    height: auto;
+    display: block;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+img[src*='winter']:hover {
+    transform: scale(1.01);
+    box-shadow: 0 12px 32px rgba(85, 104, 211, 0.25);
+}
+
+/* Descendant combinators: This ruleset uses descendant combinators (.form-section label) to target labels within .form-section elements */
+.form-section label {
+    display: block;
+    margin-bottom: var(--spacing-xs);
+    font-weight: 600;
+    color: var(--color-text);
+    font-size: var(--font-size-base);
+}
+
+/* Descendant combinator: This targets list items within elements with class "main-list" */
+.main-list li {
+    display: inline-block;
+    margin: 0 var(--spacing-md);
+    padding: var(--spacing-xs) var(--spacing-sm);
+}
+
+/* Multiple selectors: This ruleset uses multiple selectors (h1, h2, .menu) to apply the same styles to different elements */
+h1, h2, .menu {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    color: var(--color-text);
+}
+
+h2 {
+    font-size: clamp(1.5rem, 4vw, 2rem);
+    margin-bottom: var(--spacing-lg);
+    padding-bottom: var(--spacing-md);
+    border-bottom: 3px solid var(--color-primary);
+    font-weight: 600;
+    color: var(--color-text);
+}
+
+/* Chaining: This ruleset uses chaining (h1.title) to target h1 elements that also have the class "title" */
+h1.title {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+/* Pseudo-classes: This ruleset uses the :hover pseudo-class to style links when the mouse hovers over them */
+a:hover {
+    color: var(--color-primary);
+    text-decoration: none;
+    transform: translateX(3px);
+    transition: all 0.3s ease;
+}
+
+/* Pseudo-class: :visited targets links that have been visited by the user */
+a:visited {
+    color: var(--color-secondary);
+}
+
+/* Pseudo-class: :active targets elements that are being activated (clicked) */
+a:active {
+    color: var(--color-error);
+}
+
+/* Pseudo-class: :focus targets form elements when they receive focus */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 2px;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 4px rgba(85, 104, 211, 0.15);
+}
+
+/* Pseudo-class: :disabled targets disabled form elements */
+input:disabled {
+    background-color: #f3f4f6;
+    color: #9ca3af;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+button:active {
+    transform: scale(0.98);
+}
+
+/* ============================================
+   4. VISUAL RULES
+   ============================================ */
+
+/* font-family: This visual rule sets the font family for the body element */
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+    background: linear-gradient(135deg, #5568d3 0%, #6c4a9e 100%);
+    background-attachment: fixed;
+    color: var(--color-text);
+    line-height: 1.7;
+    font-size: var(--font-size-base);
+}
+
+/* font-size: This visual rule sets different font sizes for various elements */
+header p {
+    font-size: var(--font-size-lg);
+    color: #ffffff;
+}
+
+.range-info {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+.info-text {
+    font-size: var(--font-size-sm);
+    color: var(--color-text-muted);
+}
+
+/* color: This visual rule sets the text color for required field indicators */
+.required {
+    color: var(--color-error);
+    font-weight: 600;
+}
+
+/* background-color: This visual rule sets background colors for different sections */
+header {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    color: #ffffff;
+    padding: var(--spacing-xxl) var(--spacing-lg);
+    text-align: center;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+}
+
+header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, rgba(255, 255, 255, 0.1) 0%, transparent 100%);
+    pointer-events: none;
+}
+
+nav {
+    background: linear-gradient(135deg, #1f2937 0%, var(--color-bg-dark) 100%);
+    padding: 0;
+    box-shadow: var(--shadow-md);
+}
+
+section {
+    background: linear-gradient(145deg, var(--color-bg) 0%, var(--color-bg-light) 100%);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-lg) auto;
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+}
+
+section:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-lg);
+}
+
+aside {
+    background: linear-gradient(135deg, var(--color-bg-light) 0%, #e9ecef 100%);
+    padding: var(--spacing-xl);
+    margin: var(--spacing-lg) auto;
+    border: none;
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
+    border-left: 5px solid var(--color-primary);
+    max-width: 100%;
+}
+
+footer {
+    background: linear-gradient(135deg, #1a252f 0%, var(--color-bg-dark) 100%);
+    color: #ffffff;
+    text-align: center;
+    padding: var(--spacing-xl) var(--spacing-lg);
+    margin-top: var(--spacing-xxl);
+    box-shadow: 0 -4px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* text-align: This visual rule aligns text content within elements */
+header {
+    text-align: center;
+}
+
+footer {
+    text-align: center;
+}
+
+/* opacity: This visual rule sets the opacity level for the image container */
+.image-container {
+    opacity: 1;
+    padding: var(--spacing-lg);
+    background: linear-gradient(135deg, var(--color-bg) 0%, var(--color-bg-light) 100%);
+    border-radius: var(--radius-lg);
+    margin: var(--spacing-lg) 0;
+    box-shadow: var(--shadow-md);
+    transition: opacity 0.3s ease;
+    text-align: center;
+}
+
+.image-container:hover {
+    opacity: 1;
+}
+
+/* background-image: This visual rule sets a gradient background image for the body */
+body {
+    background-image: linear-gradient(135deg, #5568d3 0%, #6c4a9e 50%, #8b5cf6 100%);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+/* !important: This ruleset uses !important to override other styles where needed */
+.submit-button {
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%) !important;
+    color: #ffffff !important;
+    padding: var(--spacing-md) var(--spacing-xxl);
+    border: none;
+    font-size: var(--font-size-base);
+    cursor: pointer;
+    border-radius: var(--radius-md);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: var(--shadow-md);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    margin: var(--spacing-lg) auto 0;
+    display: block;
+}
+
+.submit-button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.submit-button:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+/* ============================================
+   5. THE BOX MODEL
+   ============================================ */
+
+/* margin: This box model property sets the margin space around elements */
+article {
+    margin: var(--spacing-lg) 0;
+}
+
+blockquote {
+    margin: var(--spacing-lg) 0;
+    padding: var(--spacing-lg) var(--spacing-xl);
+    border-left: 5px solid var(--color-primary);
+    font-style: italic;
+    background: linear-gradient(135deg, rgba(85, 104, 211, 0.05) 0%, rgba(108, 74, 158, 0.05) 100%);
+    border-radius: var(--radius-md);
+    box-shadow: var(--shadow-sm);
+    font-size: var(--font-size-lg);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* padding: This box model property sets the padding space inside elements */
+.form-group {
+    padding: var(--spacing-md) 0;
+    margin-bottom: var(--spacing-lg);
+}
+
+.checkbox-group,
+.radio-group {
+    padding: var(--spacing-xs) 0;
+    margin: var(--spacing-xs) 0;
+}
+
+/* Margin shorthand: This demonstrates margin shorthand (margin: 6px 11px 4px 9px) - top, right, bottom, left */
+section {
+    margin: var(--spacing-sm) var(--spacing-md) var(--spacing-xs) var(--spacing-sm);
+}
+
+/* Padding shorthand: This demonstrates padding shorthand (padding: 6px 10px 5px 12px) - top, right, bottom, left */
+.form-section {
+    padding: var(--spacing-xs) var(--spacing-sm) var(--spacing-xs) var(--spacing-sm);
+}
+
+/* Override with consistent padding */
+.form-section {
+    padding: var(--spacing-xxl);
+}
+
+/* auto: This demonstrates using auto for margin (margin: 0 auto) to center elements horizontally */
+main {
+    max-width: var(--max-width-xl);
+    margin: 0 auto;
+    padding: var(--spacing-lg);
+}
+
+form {
+    margin: 0 auto;
+}
+
+/* border: This box model property sets borders around elements */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    border: 2px solid var(--color-border);
+    padding: var(--spacing-sm) var(--spacing-md);
+    width: 100%;
+    font-size: var(--font-size-base);
+    transition: all 0.3s ease;
+    background-color: var(--color-bg);
+}
+
+.form-group input[type="text"]:hover,
+.form-group input[type="email"]:hover,
+.form-group input[type="password"]:hover,
+.form-group input[type="number"]:hover,
+.form-group select:hover,
+.form-group textarea:hover {
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(85, 104, 211, 0.1);
+}
+
+/* border-radius: This box model property rounds the corners of elements */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    border-radius: var(--radius-md);
+}
+
+.submit-button {
+    border-radius: var(--radius-md);
+}
+
+section {
+    border-radius: var(--radius-lg);
+}
+
+/* width: This box model property sets the width of elements */
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="number"],
+.form-group select,
+.form-group textarea {
+    width: 100%;
+}
+
+.form-group input[type="range"] {
+    width: 100%;
+}
+
+/* height: This box model property sets the height of elements */
+header {
+    height: auto;
+    min-height: 120px;
+}
+
+textarea {
+    height: 150px;
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* min-width: This box model property sets the minimum width of elements */
+form {
+    min-width: 280px;
+}
+
+section {
+    min-width: 280px;
+}
+
+/* max-width: This box model property sets the maximum width of elements */
+main {
+    max-width: var(--max-width-xl);
+}
+
+form {
+    max-width: var(--max-width-md);
+}
+
+section {
+    max-width: 100%;
+}
+
+/* min-height: This box model property sets the minimum height of elements */
+header {
+    min-height: 120px;
+}
+
+footer {
+    min-height: 80px;
+}
+
+/* max-height: This box model property sets the maximum height of elements */
+textarea {
+    max-height: 300px;
+}
+
+/* overflow: This box model property controls how content that overflows is handled */
+section {
+    overflow: visible;
+}
+
+.form-section {
+    overflow: visible;
+}
+
+/* Individual margin properties: This demonstrates individual margin properties (margin-top, margin-right, margin-bottom, margin-left) */
+h1 {
+    margin-top: 0;
+    margin-right: 0;
+    margin-bottom: var(--spacing-md);
+    margin-left: 0;
+}
+
+h2 {
+    margin-top: var(--spacing-lg);
+    margin-right: 0;
+    margin-bottom: var(--spacing-md);
+    margin-left: 0;
+}
+
+/* Individual padding properties: This demonstrates individual padding properties (padding-top, padding-right, padding-bottom, padding-left) */
+.form-group {
+    padding-top: var(--spacing-md);
+    padding-right: 0;
+    padding-bottom: var(--spacing-md);
+    padding-left: 0;
+}
+
+input, select, textarea {
+    padding-top: var(--spacing-sm);
+    padding-right: var(--spacing-md);
+    padding-bottom: var(--spacing-sm);
+    padding-left: var(--spacing-md);
+}
+
+/* box-sizing: This applies box-sizing: border-box to all elements, making padding and border included in width/height calculations */
+* {
+    box-sizing: border-box;
+}
+
+/* visibility: This property is used to show/hide elements (visibility: hidden makes element invisible but still takes up space) */
+.hidden-element {
+    visibility: hidden;
+}
+
+.visible-element {
+    visibility: visible;
+}
+
+/* ============================================
+   ADDITIONAL STYLING FOR BETTER PRESENTATION
+   ============================================ */
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: var(--spacing-xs);
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: var(--spacing-md) var(--spacing-lg);
+    display: inline-block;
+    transition: all 0.3s ease;
+    border-radius: var(--radius-sm);
+    font-weight: 500;
+    position: relative;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: var(--spacing-xs);
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--color-primary-light);
+    transition: width 0.3s ease;
+}
+
+nav ul li a:hover {
+    background: rgba(107, 125, 232, 0.2);
+    transform: translateY(-2px);
+}
+
+nav ul li a:hover::after {
+    width: 80%;
+}
+
+.submit-button:hover {
+    background: linear-gradient(135deg, var(--color-secondary) 0%, var(--color-primary) 100%) !important;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 24px rgba(85, 104, 211, 0.4);
+}
+
+.submit-button:active {
+    transform: translateY(0);
+    box-shadow: var(--shadow-md);
+}
+
+aside ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: var(--spacing-lg) 0;
+}
+
+aside li::before {
+    content: '→';
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-right: var(--spacing-sm);
+}
+
+aside li {
+    margin: var(--spacing-sm) 0;
+    color: var(--color-text);
+    padding: var(--spacing-xs) 0;
+    transition: transform 0.2s ease, color 0.2s ease;
+}
+
+aside li:hover {
+    transform: translateX(5px);
+    color: var(--color-primary);
+}
+
+section ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin: var(--spacing-lg) 0;
+}
+
+section li {
+    margin: var(--spacing-sm) 0;
+    color: var(--color-text);
+    padding: var(--spacing-sm) var(--spacing-md);
+    background: linear-gradient(135deg, rgba(85, 104, 211, 0.05) 0%, rgba(108, 74, 158, 0.05) 100%);
+    border-radius: var(--radius-md);
+    border-left: 4px solid var(--color-primary);
+    transition: all 0.3s ease;
+}
+
+section li:hover {
+    transform: translateX(5px);
+    box-shadow: var(--shadow-sm);
+    background: linear-gradient(135deg, rgba(85, 104, 211, 0.1) 0%, rgba(108, 74, 158, 0.1) 100%);
+}
+
+section li::before {
+    content: '✓';
+    color: var(--color-primary);
+    font-weight: bold;
+    margin-right: var(--spacing-sm);
+}
+
+/* Styling for internal CSS class */
+.internal-styling {
+    display: inline-block;
+    margin: var(--spacing-sm) 0;
+}
+
+/* Enhanced checkbox and radio button styling */
+.checkbox-group input[type="checkbox"],
+.radio-group input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: var(--spacing-sm);
+    cursor: pointer;
+    accent-color: var(--color-primary);
+    flex-shrink: 0;
+}
+
+.checkbox-group label,
+.radio-group label {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: var(--spacing-xs);
+    border-radius: var(--radius-sm);
+    transition: background-color 0.2s ease;
+    color: var(--color-text);
+}
+
+.checkbox-group label:hover,
+.radio-group label:hover {
+    background-color: rgba(85, 104, 211, 0.1);
+}
+
+/* Enhanced range input styling */
+input[type="range"] {
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: linear-gradient(90deg, var(--color-border) 0%, var(--color-primary) 50%, var(--color-border) 100%);
+    border-radius: 5px;
+    outline: none;
+    width: 100%;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    transition: transform 0.2s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+    transform: scale(1.15);
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: var(--shadow-sm);
+    border: none;
+}
+
+/* Enhanced select dropdown styling */
+select {
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'%3E%3Cpath fill='%235568d3' d='M6 9L1 4h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 12px center;
+    padding-right: 40px;
+    cursor: pointer;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Additional visual enhancements */
+main {
+    animation: fadeIn 0.6s ease-in;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   RESPONSIVE DESIGN - MEDIA QUERIES
+   ============================================ */
+
+/* Tablet and smaller */
+@media (max-width: 768px) {
+    :root {
+        --spacing-xxl: 32px;
+        --spacing-xl: 24px;
+        --spacing-lg: 20px;
+    }
+    
+    .form-section,
+    section,
+    aside {
+        padding: var(--spacing-xl);
+        margin: var(--spacing-md) auto;
+    }
+    
+    header {
+        padding: var(--spacing-xl) var(--spacing-md);
+    }
+    
+    nav ul {
+        flex-direction: column;
+        gap: var(--spacing-xs);
+    }
+    
+    nav ul li {
+        width: 100%;
+    }
+    
+    nav ul li a {
+        display: block;
+        text-align: center;
+    }
+    
+    .main-list li {
+        display: block;
+        margin: var(--spacing-xs) 0;
+    }
+    
+    .submit-button {
+        width: 100%;
+        max-width: 100%;
+    }
+    
+    .image-container {
+        padding: var(--spacing-md);
+    }
+    
+    img[src*='winter'] {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Mobile devices */
+@media (max-width: 480px) {
+    :root {
+        --spacing-xxl: 24px;
+        --spacing-xl: 20px;
+        --spacing-lg: 16px;
+        --spacing-md: 12px;
+    }
+    
+    h1 {
+        font-size: 1.75rem;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .form-section,
+    section,
+    aside {
+        padding: var(--spacing-lg);
+        margin: var(--spacing-md) auto;
+        border-radius: var(--radius-md);
+    }
+    
+    header {
+        padding: var(--spacing-lg) var(--spacing-md);
+        min-height: auto;
+    }
+    
+    footer {
+        padding: var(--spacing-lg) var(--spacing-md);
+    }
+    
+    .form-group {
+        padding: var(--spacing-sm) 0;
+        margin-bottom: var(--spacing-md);
+    }
+    
+    input, select, textarea {
+        padding: var(--spacing-sm);
+        font-size: 16px; /* Prevents zoom on iOS */
+    }
+    
+    .green.bold {
+        padding: var(--spacing-sm) var(--spacing-md);
+        font-size: var(--font-size-sm);
+    }
+    
+    blockquote {
+        padding: var(--spacing-md);
+        font-size: var(--font-size-base);
+    }
+    
+    .image-container {
+        padding: var(--spacing-sm);
+        margin: var(--spacing-md) 0;
+    }
+}
+
+/* Large screens */
+@media (min-width: 1200px) {
+    main {
+        max-width: var(--max-width-xl);
+    }
+    
+    .form-section {
+        max-width: 900px;
+    }
+}
+
+/* Print styles */
+@media print {
+    body {
+        background: white;
+        color: black;
+    }
+    
+    header, nav, footer {
+        display: none;
+    }
+    
+    section, .form-section {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        page-break-inside: avoid;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --color-primary: #0000ff;
+        --color-text: #000000;
+        --color-border: #000000;
+    }
+    
+    .form-section,
+    section {
+        border: 2px solid #000000;
+    }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}

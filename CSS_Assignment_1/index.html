@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Job Application - Tech Solutions Inc.</title>
+    <!-- Link to external CSS stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- Internal CSS: This ruleset demonstrates internal CSS styling placed inside the <style> element -->
+    <style>
+        /* This is an internal CSS ruleset demonstrating styling within the <head> section */
+        .internal-styling {
+            font-style: italic;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header section -->
+    <header>
+        <!-- Chaining selector example: h1.title -->
+        <h1 id="main-title" class="title">Tech Solutions Inc.</h1>
+        <p>Join Our Team - Build the Future</p>
+    </header>
+
+    <!-- Navigation menu -->
+    <nav class="menu">
+        <ul class="main-list">
+            <li><a href="#application">Application Form</a></li>
+            <li><a href="#about">About Us</a></li>
+            <li><a href="#benefits">Benefits</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main content area -->
+    <main>
+        <!-- Main section with form -->
+        <section id="application" class="form-section">
+            <article>
+                <h2>Job Application Form</h2>
+                
+                <!-- Motivational blockquote -->
+                <blockquote>
+                    "The only way to do great work is to love what you do. If you haven't found it yet, keep looking. Don't settle." - Steve Jobs
+                </blockquote>
+
+                <p>Please fill out the form below to apply for a position.</p>
+
+                <!-- Multiple class selectors example: .green.bold -->
+                <p class="green bold">This text uses multiple class selectors for styling.</p>
+
+                <!-- Attribute selector example: img[src*='winter'] -->
+                <div class="image-container">
+                    <!-- This image demonstrates the attribute selector img[src*='winter'] -->
+                    <!-- Using free stock image from Unsplash - URL contains 'winter' in query parameter for CSS selector -->
+                    <img src="https://images.unsplash.com/photo-1518837695005-2083093ee35b?winter-landscape&w=1200&h=600&fit=crop&q=80" alt="Beautiful winter landscape with snow-covered mountains and trees" loading="lazy">
+                </div>
+
+                    <!-- Job Application Form -->
+                    <form action="/submit" method="POST" autocomplete="on" aria-label="Job Application Form">
+                        
+                        <!-- Full Name - Text Input -->
+                        <div class="form-group">
+                            <label for="fullname">Full Name <span class="required">*</span></label>
+                            <input 
+                                type="text" 
+                                id="fullname" 
+                                name="fullname" 
+                                placeholder="Enter your name"
+                                required
+                                minlength="2"
+                                maxlength="100"
+                                pattern="[A-Za-z\s]+"
+                                autocomplete="name"
+                                aria-required="true"
+                            >
+                        </div>
+
+                        <!-- Email - Text Input -->
+                        <div class="form-group">
+                            <label for="email">Email Address <span class="required">*</span></label>
+                            <input 
+                                type="email" 
+                                id="email" 
+                                name="email" 
+                                placeholder="your.email@example.com"
+                                required
+                                minlength="5"
+                                maxlength="100"
+                                autocomplete="email"
+                                aria-required="true"
+                            >
+                        </div>
+
+                        <!-- Password Field -->
+                        <div class="form-group">
+                            <label for="password">Password <span class="required">*</span></label>
+                            <input 
+                                type="password" 
+                                id="password" 
+                                name="password" 
+                                placeholder="Enter password"
+                                required
+                                minlength="8"
+                                maxlength="50"
+                                autocomplete="new-password"
+                                aria-required="true"
+                            >
+                        </div>
+
+                        <!-- Years of Experience - Number Input -->
+                        <div class="form-group">
+                            <label for="experience">Years of Experience <span class="required">*</span></label>
+                            <input 
+                                type="number" 
+                                id="experience" 
+                                name="experience" 
+                                placeholder="Enter number"
+                                required
+                                min="0"
+                                max="50"
+                                autocomplete="off"
+                                aria-required="true"
+                            >
+                        </div>
+
+                        <!-- Expected Salary - Range Slider -->
+                        <div class="form-group">
+                            <label for="salary">Expected Salary</label>
+                            <input 
+                                type="range" 
+                                id="salary" 
+                                name="salary" 
+                                min="30000"
+                                max="150000"
+                                step="5000"
+                                value="60000"
+                                aria-label="Expected salary range"
+                            >
+                            <div class="range-info">
+                                <span>$30,000</span>
+                                <span>$150,000</span>
+                            </div>
+                        </div>
+
+                        <!-- Job Position - Dropdown Menu -->
+                        <div class="form-group">
+                            <label for="position">Desired Position <span class="required">*</span></label>
+                            <select 
+                                id="position" 
+                                name="position" 
+                                required
+                                aria-required="true"
+                            >
+                                <option value="">-- Select a position --</option>
+                                <option value="software-engineer">Software Engineer</option>
+                                <option value="frontend-developer">Frontend Developer</option>
+                                <option value="backend-developer">Backend Developer</option>
+                                <option value="fullstack-developer">Full Stack Developer</option>
+                                <option value="data-scientist">Data Scientist</option>
+                                <option value="devops-engineer">DevOps Engineer</option>
+                                <option value="ui-ux-designer">UI/UX Designer</option>
+                                <option value="product-manager">Product Manager</option>
+                            </select>
+                        </div>
+
+                        <!-- City - Datalist -->
+                        <div class="form-group">
+                            <label for="city">Preferred Work Location</label>
+                            <input 
+                                type="text" 
+                                id="city" 
+                                name="city" 
+                                placeholder="Type or select a city"
+                                list="cities"
+                                autocomplete="address-level2"
+                            >
+                            <datalist id="cities">
+                                <option value="New York">
+                                <option value="San Francisco">
+                                <option value="Los Angeles">
+                                <option value="Chicago">
+                                <option value="Boston">
+                                <option value="Seattle">
+                                <option value="Austin">
+                                <option value="Remote">
+                            </datalist>
+                        </div>
+
+                        <!-- Department - Datalist -->
+                        <div class="form-group">
+                            <label for="department">Preferred Department</label>
+                            <input 
+                                type="text" 
+                                id="department" 
+                                name="department" 
+                                placeholder="Type or select a department"
+                                list="departments"
+                            >
+                            <datalist id="departments">
+                                <option value="Engineering">
+                                <option value="Product">
+                                <option value="Design">
+                                <option value="Data Science">
+                                <option value="Operations">
+                                <option value="Marketing">
+                            </datalist>
+                        </div>
+
+                        <!-- Job Type - Radio Buttons -->
+                        <div class="form-group">
+                            <label>Job Type <span class="required">*</span></label>
+                            <div class="radio-group">
+                                <input 
+                                    type="radio" 
+                                    id="fulltime" 
+                                    name="jobtype" 
+                                    value="fulltime"
+                                    required
+                                    aria-required="true"
+                                >
+                                <label for="fulltime">Full-Time</label>
+                            </div>
+                            <div class="radio-group">
+                                <input 
+                                    type="radio" 
+                                    id="parttime" 
+                                    name="jobtype" 
+                                    value="parttime"
+                                >
+                                <label for="parttime">Part-Time</label>
+                            </div>
+                            <div class="radio-group">
+                                <input 
+                                    type="radio" 
+                                    id="contract" 
+                                    name="jobtype" 
+                                    value="contract"
+                                >
+                                <label for="contract">Contract</label>
+                            </div>
+                        </div>
+
+                        <!-- Skills/Preferences - Checkboxes -->
+                        <div class="form-group">
+                            <label>Skills & Preferences</label>
+                            <div class="checkbox-group">
+                                <input 
+                                    type="checkbox" 
+                                    id="remote" 
+                                    name="preferences" 
+                                    value="remote"
+                                >
+                                <label for="remote">Open to Remote Work</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input 
+                                    type="checkbox" 
+                                    id="relocation" 
+                                    name="preferences" 
+                                    value="relocation"
+                                >
+                                <label for="relocation">Willing to Relocate</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input 
+                                    type="checkbox" 
+                                    id="javascript" 
+                                    name="skills" 
+                                    value="javascript"
+                                >
+                                <label for="javascript">JavaScript</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input 
+                                    type="checkbox" 
+                                    id="python" 
+                                    name="skills" 
+                                    value="python"
+                                >
+                                <label for="python">Python</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input 
+                                    type="checkbox" 
+                                    id="react" 
+                                    name="skills" 
+                                    value="react"
+                                >
+                                <label for="react">React</label>
+                            </div>
+                            <div class="checkbox-group">
+                                <input 
+                                    type="checkbox" 
+                                    id="nodejs" 
+                                    name="skills" 
+                                    value="nodejs"
+                                >
+                                <label for="nodejs">Node.js</label>
+                            </div>
+                        </div>
+
+                        <!-- Cover Letter - Textarea -->
+                        <div class="form-group">
+                            <label for="coverletter">Cover Letter <span class="required">*</span></label>
+                            <textarea 
+                                id="coverletter" 
+                                name="coverletter" 
+                                rows="8" 
+                                cols="50"
+                                placeholder="Write your cover letter here..."
+                                required
+                                minlength="50"
+                                maxlength="2000"
+                                aria-required="true"
+                            ></textarea>
+                        </div>
+
+                        <!-- Disabled Input Example -->
+                        <div class="form-group">
+                            <label for="disabled-field">Application ID</label>
+                            <input 
+                                type="text" 
+                                id="disabled-field" 
+                                name="appid" 
+                                value="APP-2024-001"
+                                disabled
+                                aria-label="Application ID"
+                            >
+                        </div>
+
+                        <!-- Readonly Input Example -->
+                        <div class="form-group">
+                            <label for="readonly-field">Application Date</label>
+                            <input 
+                                type="text" 
+                                id="readonly-field" 
+                                name="appdate" 
+                                value="2024-01-15"
+                                readonly
+                                aria-label="Application date"
+                            >
+                        </div>
+
+                        <!-- Submit Button -->
+                        <div class="form-group">
+                            <input 
+                                type="submit" 
+                                value="Submit" 
+                                class="submit-button"
+                                aria-label="Submit form"
+                            >
+                        </div>
+                    </form>
+                </article>
+            </section>
+
+    <!-- Aside section -->
+    <aside>
+        <h3>Why Join Us?</h3>
+        <ul>
+            <li>Good salary</li>
+            <li>Flexible hours</li>
+            <li>Remote work</li>
+            <li>Learning opportunities</li>
+        </ul>
+
+        <h3>Company Info</h3>
+        <p>We are a technology company looking for talented people.</p>
+    </aside>
+    </main>
+
+    <!-- Additional sections -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a technology company that has been around for many years. We make software and websites.</p>
+    </section>
+
+    <section id="benefits">
+        <h2>Benefits</h2>
+        <ul>
+            <li>Health insurance</li>
+            <li>Paid vacation</li>
+            <li>Training programs</li>
+        </ul>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>Email: careers@company.com</p>
+        <p>Phone: (555) 123-4567</p>
+    </section>
+
+    <!-- Footer -->
+    <!-- INLINE CSS: This is an inline CSS example applied directly to the footer element -->
+    <footer style="border-top: 3px solid #4a90e2;">
+        <p>&copy; 2024 Tech Solutions Inc.</p>
+    </footer>
+</body>
+</html>
