@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Warm leaf icon">
+  <defs>
+    <linearGradient id="g" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#b85c38"/>
+      <stop offset="100%" stop-color="#d9a74a"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="14" fill="#f6f0e8"/>
+  <path d="M20 44c12-2 22-12 24-24-12 2-22 12-24 24z" fill="url(#g)"/>
+  <circle cx="26" cy="26" r="4" fill="#8f452c"/>
+</svg>
+
