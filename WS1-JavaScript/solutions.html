@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workshop 1 - Solutions</title>
+</head>
+<body>
+    <h1>Workshop 1 - Hands-On Exercises Solutions</h1>
+    
+    <h2>Exercise 1: Dog's Age</h2>
+    <p>Open the console (F12) to see the results.</p>
+    <script>
+        // Exercise 1: Dog's Age
+        // Function that accepts a person's age and returns their age in dog years
+        // One human year = 7 dog years
+        function calculateDogYears(humanAge) {
+            return humanAge * 7;
+        }
+        
+        // Test the function with various ages
+        console.log("Exercise 1: Dog's Age");
+        console.log("Dog years for age 5:", calculateDogYears(5));
+        console.log("Dog years for age 10:", calculateDogYears(10));
+        console.log("Dog years for age 25:", calculateDogYears(25));
+        console.log("Dog years for age 50:", calculateDogYears(50));
+    </script>
+    
+    <h2>Exercise 2: Debugging</h2>
+    <p>Open the console (F12) to see the corrected code output.</p>
+    <script>
+        // Exercise 2: Debugging
+        // This code originally contained errors. Below are the corrections:
+        
+        /*
+        Corrections for the Debugging Exercise:
+        1. FIX: The string "Joe" needed to be enclosed in quotes to be a proper string literal.
+        2. FIX: The for-loop condition was incorrect - it used a hardcoded value (3) instead of 
+           arr.length, which would cause an error if the array size changed. Changed it to 
+           loop safely through the array's length.
+        3. FIX: Added missing closing quote in the else block's console.log statement.
+        */
+        
+        // Corrected Code:
+        let i = 5;
+        let j = 10;
+        let k = 25;
+        let l = "Joe"; // Fixed: Added quotes around "Joe" as it should be a string
+        const arr = [3, 5, 7];
+        
+        if (i < j) {
+            console.log("i is less than j");
+        } else if (j > k) {
+            console.log("j is greater than k");
+        } else {
+            console.log("j"); // Fixed: Added missing closing quote
+        }
+        
+        // Fixed: Changed 3 to arr.length to avoid index error and make it dynamic
+        for (let i = 0; i < arr.length; i++) {
+            console.log(arr[i]);
+        }
+    </script>
+</body>
+</html>
