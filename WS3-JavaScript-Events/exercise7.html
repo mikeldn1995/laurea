@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Browser Compatibility</title>
+</head>
+<body>
+    <button id="compatBtn">Compatible Click</button>
+    <script>
+        var btn = document.getElementById('compatBtn');
+
+        function compatClick() {
+            alert('Compatible!');
+        }
+
+        if (window.addEventListener) {
+            btn.addEventListener('click', compatClick);
+        } else if (window.attachEvent) {
+            btn.attachEvent('onclick', compatClick);
+        }
+    </script>
+</body>
+</html>
