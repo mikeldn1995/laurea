@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 5 - Random Image</title>
+</head>
+<body>
+    <img id="randomImage" src="" alt="Random Image" width="400">
+
+    <script>
+        var images = [
+            "https://picsum.photos/id/10/400/300",
+            "https://picsum.photos/id/20/400/300",
+            "https://picsum.photos/id/30/400/300",
+            "https://picsum.photos/id/40/400/300",
+            "https://picsum.photos/id/50/400/300"
+        ];
+
+        var randomIndex = Math.floor(Math.random() * images.length);
+        document.getElementById("randomImage").src = images[randomIndex];
+    </script>
+</body>
+</html>
