@@ -1,0 +1,195 @@
+/* General Reset and Body Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+    padding: 2rem;
+}
+
+/* Main Container */
+main {
+    max-width: 600px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+/* Fieldset and Legend */
+fieldset {
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+legend {
+    font-weight: bold;
+    font-size: 1.1rem;
+    color: #2c3e50;
+    padding: 0 0.5rem;
+}
+
+/* Form Groups */
+.form-group {
+    margin-bottom: 1.2rem;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.3rem;
+    font-weight: 600;
+    color: #34495e;
+}
+
+label span {
+    color: #e74c3c;
+}
+
+input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
+}
+
+/* Valid and Invalid States */
+input:not(:placeholder-shown):valid,
+input.valid {
+    border-color: #27ae60;
+}
+
+input:not(:placeholder-shown):invalid,
+input.invalid {
+    border-color: #e74c3c;
+}
+
+input.invalid:focus {
+    box-shadow: 0 0 0 3px rgba(231, 76, 60, 0.2);
+}
+
+/* Hints */
+small {
+    display: block;
+    margin-top: 0.3rem;
+    color: #7f8c8d;
+    font-size: 0.85rem;
+}
+
+/* Error Messages */
+.error-message {
+    display: block;
+    color: #e74c3c;
+    font-size: 0.85rem;
+    min-height: 1.2rem;
+    margin-top: 0.2rem;
+}
+
+/* Error Summary */
+.error-summary {
+    background-color: #fdf0f0;
+    border: 2px solid #e74c3c;
+    border-radius: 6px;
+    padding: 1rem 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.error-summary h2 {
+    color: #e74c3c;
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.error-summary ul {
+    list-style: none;
+    padding: 0;
+}
+
+.error-summary li {
+    margin-bottom: 0.3rem;
+}
+
+.error-summary a {
+    color: #c0392b;
+    text-decoration: underline;
+}
+
+.error-summary a:hover {
+    color: #e74c3c;
+}
+
+/* Submit Button */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 0.8rem;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #2980b9;
+}
+
+button[type="submit"]:focus {
+    outline: 2px solid #2c3e50;
+    outline-offset: 2px;
+}
+
+/* Saved Entries Section */
+#entries-section {
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+    background-color: #eaf7ea;
+    border: 1px solid #27ae60;
+    border-radius: 6px;
+}
+
+#entries-section h2 {
+    color: #27ae60;
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+#entries-list {
+    list-style: none;
+    padding: 0;
+}
+
+#entries-list li {
+    padding: 0.4rem 0;
+    border-bottom: 1px solid #c8e6c9;
+    font-size: 0.95rem;
+}
+
+#entries-list li:last-child {
+    border-bottom: none;
+}

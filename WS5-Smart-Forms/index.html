@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Workshop 5: Smart Forms</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <h1>Smart Signup Form</h1>
+
+        <!-- Error Summary -->
+        <div id="error-summary" class="error-summary" role="alert" aria-live="polite" hidden>
+            <h2>Please fix the following errors:</h2>
+            <ul id="error-list"></ul>
+        </div>
+
+        <!-- Saved Entries List -->
+        <section id="entries-section" hidden>
+            <h2>Saved Entries</h2>
+            <ul id="entries-list"></ul>
+        </section>
+
+        <form id="signup-form" novalidate>
+            <fieldset>
+                <legend>Personal Information</legend>
+
+                <div class="form-group">
+                    <label for="fullname">Full Name <span aria-hidden="true">*</span></label>
+                    <input type="text" id="fullname" name="fullname" required
+                           minlength="2" maxlength="50"
+                           aria-describedby="fullname-error">
+                    <span id="fullname-error" class="error-message" role="alert"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address <span aria-hidden="true">*</span></label>
+                    <input type="email" id="email" name="email" required
+                           aria-describedby="email-error">
+                    <span id="email-error" class="error-message" role="alert"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="phone">Phone Number</label>
+                    <input type="tel" id="phone" name="phone"
+                           pattern="[0-9+\-\s()]*"
+                           aria-describedby="phone-error phone-hint">
+                    <small id="phone-hint">Format: +358 40 1234567</small>
+                    <span id="phone-error" class="error-message" role="alert"></span>
+                </div>
+            </fieldset>
+
+            <fieldset>
+                <legend>Account Details</legend>
+
+                <div class="form-group">
+                    <label for="username">Username <span aria-hidden="true">*</span></label>
+                    <input type="text" id="username" name="username" required
+                           minlength="3" maxlength="20"
+                           pattern="[a-zA-Z0-9_]+"
+                           aria-describedby="username-error username-hint">
+                    <small id="username-hint">Letters, numbers, and underscores only</small>
+                    <span id="username-error" class="error-message" role="alert"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password <span aria-hidden="true">*</span></label>
+                    <input type="password" id="password" name="password" required
+                           minlength="8"
+                           aria-describedby="password-error password-hint">
+                    <small id="password-hint">Minimum 8 characters</small>
+                    <span id="password-error" class="error-message" role="alert"></span>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirm Password <span aria-hidden="true">*</span></label>
+                    <input type="password" id="confirm-password" name="confirm-password" required
+                           aria-describedby="confirm-password-error">
+                    <span id="confirm-password-error" class="error-message" role="alert"></span>
+                </div>
+            </fieldset>
+
+            <button type="submit">Sign Up</button>
+        </form>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
