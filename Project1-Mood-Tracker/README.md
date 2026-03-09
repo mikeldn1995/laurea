@@ -67,8 +67,6 @@ Three files with clear separation of concerns:
 ![Light mode](screenshots/light.png)
 ![Dark mode](screenshots/dark.png)
 
-*(To be added)*
-
 ## Reflection
 
 Building MoodFlow taught me a lot about what vanilla JavaScript can do without any frameworks. The hardest part was keeping the render cycle consistent — every user action (adding, deleting, filtering, searching) needs to update both the entry list and the statistics at the same time, and getting that right without creating stale state took careful thought.
@@ -93,15 +91,18 @@ If I continue this project, I would add a calendar heatmap to show mood patterns
 | F. Deployment | 3/3 | Live GitHub Pages URL, consistent repo links |
 | G. Demo Video | 5/5 | Structured 3-5 min demo with code highlight and reflection |
 
-## Video Timestamps
+## Video
+
+[Watch the demo video (OneDrive)](https://laureauas-my.sharepoint.com/:v:/g/personal/mik00504_laurea_fi/IQAyYg8sBrZzTaZ9rOxDFoixAfM4Ws2DZ4lyhDqMMrvkNNI?nav=eyJyZWZlcnJhbEluZm8iOnsicmVmZXJyYWxBcHAiOiJPbmVEcml2ZUZvckJ1c2luZXNzIiwicmVmZXJyYWxBcHBQbGF0Zm9ybSI6IldlYiIsInJlZmVycmFsTW9kZSI6InZpZXciLCJyZWZlcnJhbFZpZXciOiJNeUZpbGVzTGlua0NvcHkifX0&e=12ry7z)
+
+### Timestamps
 
 | Time | Section |
 |------|---------|
-| 0:00 | Introduction — name, project title, course |
-| 0:30 | Feature overview |
-| 1:00 | Demo — create entry, refresh to show persistence |
-| 2:00 | Demo — filter, search, delete |
-| 2:45 | Demo — dark mode, responsive view, clear all |
-| 3:15 | Code highlight — localStorage validation and sanitisation |
-| 4:00 | Reflection — challenges and what I would improve |
-| 4:30 | End |
+| 0:00 | Introduction |
+| 0:14 | Overview |
+| 0:30 | Key features |
+| 1:11 | Demonstration |
+| 2:30 | Script and code walkthrough |
+| 3:35 | Reflection |
+| 4:28 | End |
