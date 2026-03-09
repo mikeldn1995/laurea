@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MoodFlow — Mood &amp; Activity Tracker</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>">
+    <!-- Lucide Icons CDN -->
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="logo">
+                <span class="logo-icon" aria-hidden="true">✦</span>
+                <h1>MoodFlow</h1>
+            </div>
+            <p class="tagline">Track your mood. Reflect on your day.</p>
+            <button id="dark-mode-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+                <i data-lucide="sun" class="icon-sun"></i>
+                <i data-lucide="moon" class="icon-moon"></i>
+            </button>
+        </header>
+
+        <!-- Entry Form -->
+        <section class="card entry-card" aria-labelledby="entry-heading">
+            <h2 id="entry-heading" class="section-title">How are you feeling?</h2>
+
+            <form id="mood-form" novalidate>
+                <!-- Mood Selector -->
+                <fieldset class="mood-selector" role="radiogroup" aria-label="Select your mood">
+                    <legend class="sr-only">Select your mood</legend>
+                    <div class="mood-options">
+                        <button type="button" class="mood-btn" data-mood="amazing" aria-label="Amazing">
+                            <i data-lucide="sparkles"></i>
+                            <span>Amazing</span>
+                        </button>
+                        <button type="button" class="mood-btn" data-mood="happy" aria-label="Happy">
+                            <i data-lucide="smile"></i>
+                            <span>Happy</span>
+                        </button>
+                        <button type="button" class="mood-btn" data-mood="neutral" aria-label="Neutral">
+                            <i data-lucide="meh"></i>
+                            <span>Neutral</span>
+                        </button>
+                        <button type="button" class="mood-btn" data-mood="sad" aria-label="Sad">
+                            <i data-lucide="frown"></i>
+                            <span>Sad</span>
+                        </button>
+                        <button type="button" class="mood-btn" data-mood="awful" aria-label="Awful">
+                            <i data-lucide="cloud-rain"></i>
+                            <span>Awful</span>
+                        </button>
+                    </div>
+                    <p id="mood-error" class="error-text" role="alert" hidden>Please select a mood</p>
+                </fieldset>
+
+                <!-- Activities -->
+                <div class="form-group">
+                    <label for="activities">Activities or highlights <span class="hint">(one per line, up to 3)</span></label>
+                    <textarea id="activities" name="activities" rows="3" maxlength="300"
+                              placeholder="Went for a morning run&#10;Read a great book&#10;Cooked dinner"
+                              aria-describedby="activities-hint"></textarea>
+                    <small id="activities-hint" class="char-count"><span id="char-count">0</span>/300</small>
+                </div>
+
+                <!-- Submit -->
+                <button type="submit" class="btn-primary" id="save-btn">
+                    <i data-lucide="plus-circle"></i>
+                    <span>Save Entry</span>
+                </button>
+            </form>
+        </section>
+
+        <!-- Stats Section -->
+        <section class="card stats-card" aria-labelledby="stats-heading">
+            <h2 id="stats-heading" class="section-title">Your Stats</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-value" id="total-entries">0</span>
+                    <span class="stat-label">Total Entries</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="top-mood">—</span>
+                    <span class="stat-label">Most Frequent</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="weekly-avg">—</span>
+                    <span class="stat-label">Weekly Avg</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-value" id="current-streak">0</span>
+                    <span class="stat-label">Day Streak</span>
+                </div>
+            </div>
+
+            <!-- Mood Distribution Bar Chart -->
+            <div class="mood-chart" id="mood-chart" aria-label="Mood distribution chart">
+                <h3 class="chart-title">Mood Distribution</h3>
+                <div class="chart-bars" id="chart-bars"></div>
+            </div>
+        </section>
+
+        <!-- History Section -->
+        <section class="card history-card" aria-labelledby="history-heading">
+            <div class="history-header">
+                <h2 id="history-heading" class="section-title">History</h2>
+                <div class="history-toolbar">
+                    <!-- Search (Page 2) -->
+                    <div class="search-wrapper">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input type="text" id="search-input" placeholder="Search activities..." aria-label="Search entries">
+                    </div>
+
+                    <!-- Filter -->
+                    <div class="filter-wrapper">
+                        <select id="mood-filter" aria-label="Filter by mood">
+                            <option value="all">All Moods</option>
+                            <option value="amazing">Amazing</option>
+                            <option value="happy">Happy</option>
+                            <option value="neutral">Neutral</option>
+                            <option value="sad">Sad</option>
+                            <option value="awful">Awful</option>
+                        </select>
+                        <i data-lucide="chevron-down" class="select-icon"></i>
+                    </div>
+
+                    <!-- Clear All (Page 2) -->
+                    <button id="clear-all-btn" class="icon-btn danger" aria-label="Clear all entries" title="Clear all entries">
+                        <i data-lucide="trash-2"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Entry List -->
+            <div id="history-list" class="history-list" role="list" aria-live="polite">
+                <div class="empty-state" id="empty-state">
+                    <i data-lucide="notebook-pen"></i>
+                    <p>No entries yet. Start tracking your mood!</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="app-footer">
+            <p>MoodFlow &mdash; Built with vanilla JavaScript</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
