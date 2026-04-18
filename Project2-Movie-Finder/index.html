@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" data-lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Movie Finder — search the OMDB movie database, view plots, cast, ratings and more.">
+    <title>Movie Finder — OMDB Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>">
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <div class="header-top">
+                <div class="logo">
+                    <span class="logo-icon" aria-hidden="true">🎬</span>
+                    <h1 data-i18n="appTitle">Movie Finder</h1>
+                </div>
+                <div class="header-actions">
+                    <button id="settings-btn" class="icon-btn" aria-label="Settings" title="Settings">
+                        <i data-lucide="key-round"></i>
+                    </button>
+                    <button id="lang-toggle" class="icon-btn lang-btn" aria-label="Switch language" title="Switch language">
+                        <span class="lang-label">EN</span>
+                    </button>
+                    <button id="dark-mode-toggle" class="icon-btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+                        <i data-lucide="sun" class="icon-sun"></i>
+                        <i data-lucide="moon" class="icon-moon"></i>
+                    </button>
+                </div>
+            </div>
+            <p class="tagline" data-i18n="tagline">Search the OMDB database — plots, cast, ratings and posters, all in one place.</p>
+        </header>
+
+        <section class="card filter-card" aria-labelledby="filter-heading">
+            <h2 id="filter-heading" class="sr-only" data-i18n="filterHeading">Search and filters</h2>
+
+            <form id="search-form" class="filter-grid" role="search" autocomplete="off">
+                <div class="filter-group search-group">
+                    <label for="search-input" data-i18n="searchLabel">Search title</label>
+                    <div class="search-wrapper">
+                        <i data-lucide="search" class="search-icon"></i>
+                        <input
+                            type="search"
+                            id="search-input"
+                            data-i18n-attr="placeholder:searchPlaceholder"
+                            placeholder="Try: Batman, Inception, The Matrix…"
+                            aria-label="Search movies"
+                            autocomplete="off"
+                            minlength="2"
+                            required
+                        >
+                        <button type="button" id="clear-search" class="clear-search-btn" aria-label="Clear search" hidden>
+                            <i data-lucide="x"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label for="type-select" data-i18n="typeLabel">Type</label>
+                    <div class="select-wrapper">
+                        <select id="type-select" aria-label="Content type">
+                            <option value="" data-i18n="typeAny">Any</option>
+                            <option value="movie" data-i18n="typeMovie">Movie</option>
+                            <option value="series" data-i18n="typeSeries">Series</option>
+                            <option value="episode" data-i18n="typeEpisode">Episode</option>
+                        </select>
+                        <i data-lucide="chevron-down" class="select-icon"></i>
+                    </div>
+                </div>
+
+                <div class="filter-group">
+                    <label for="year-input" data-i18n="yearLabel">Year</label>
+                    <div class="search-wrapper">
+                        <input
+                            type="number"
+                            id="year-input"
+                            min="1900"
+                            max="2099"
+                            step="1"
+                            data-i18n-attr="placeholder:yearPlaceholder"
+                            placeholder="e.g. 2019"
+                            aria-label="Release year"
+                        >
+                    </div>
+                </div>
+
+                <div class="filter-group filter-actions">
+                    <button type="submit" class="btn-primary submit-btn">
+                        <i data-lucide="search"></i>
+                        <span data-i18n="searchBtn">Search</span>
+                    </button>
+                </div>
+            </form>
+
+            <div class="result-meta" id="result-meta" aria-live="polite"></div>
+
+            <div class="recent-row" id="recent-row" hidden>
+                <span class="recent-label" data-i18n="recentLabel">Recent:</span>
+                <div class="recent-chips" id="recent-chips" role="list"></div>
+                <button type="button" id="clear-recents" class="recent-clear" aria-label="Clear recent searches">
+                    <i data-lucide="trash-2"></i>
+                </button>
+            </div>
+        </section>
+
+        <main id="results" class="results" aria-live="polite" aria-busy="false">
+            <div class="welcome-state" id="welcome-state">
+                <div class="welcome-inner">
+                    <i data-lucide="popcorn"></i>
+                    <h2 data-i18n="welcomeTitle">Find any movie</h2>
+                    <p data-i18n="welcomeBody">Search by title to explore posters, plots, cast and ratings from the OMDB movie database.</p>
+                    <div class="suggestion-row">
+                        <span data-i18n="tryLabel">Try:</span>
+                        <button type="button" class="suggestion-btn" data-q="Inception">Inception</button>
+                        <button type="button" class="suggestion-btn" data-q="The Matrix">The Matrix</button>
+                        <button type="button" class="suggestion-btn" data-q="Dune">Dune</button>
+                        <button type="button" class="suggestion-btn" data-q="Oppenheimer">Oppenheimer</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="loading-state" id="loading-state" hidden>
+                <div class="spinner" aria-hidden="true"></div>
+                <p data-i18n="loading">Loading results…</p>
+            </div>
+
+            <div class="error-state" id="error-state" hidden>
+                <i data-lucide="alert-triangle"></i>
+                <h3 data-i18n="errorTitle">Something went wrong</h3>
+                <p id="error-message"></p>
+                <button class="btn-primary" id="retry-btn">
+                    <i data-lucide="refresh-cw"></i>
+                    <span data-i18n="retry">Try again</span>
+                </button>
+            </div>
+
+            <div class="empty-state" id="empty-state" hidden>
+                <i data-lucide="search-x"></i>
+                <p data-i18n="empty">No results match your search.</p>
+            </div>
+
+            <div class="events-grid" id="events-grid" hidden></div>
+
+            <div class="load-more-wrapper" id="load-more-wrapper" hidden>
+                <button type="button" id="load-more-btn" class="btn-outline">
+                    <i data-lucide="chevron-down"></i>
+                    <span data-i18n="loadMore">Load more</span>
+                </button>
+            </div>
+        </main>
+
+        <footer class="app-footer">
+            <p data-i18n="footerData">Data from <a href="https://www.omdbapi.com/" target="_blank" rel="noopener">OMDB API</a></p>
+            <p data-i18n="footerBuild">Built with vanilla JavaScript · Laurea UAS</p>
+        </footer>
+    </div>
+
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" hidden>
+        <div class="modal-backdrop" data-close></div>
+        <div class="modal-content" role="document">
+            <button type="button" class="modal-close" aria-label="Close" data-close>
+                <i data-lucide="x"></i>
+            </button>
+            <div class="modal-body" id="modal-body"></div>
+        </div>
+    </div>
+
+    <div class="modal" id="settings-modal" role="dialog" aria-modal="true" aria-labelledby="settings-title" hidden>
+        <div class="modal-backdrop" data-close-settings></div>
+        <div class="modal-content modal-content-narrow" role="document">
+            <button type="button" class="modal-close" aria-label="Close" data-close-settings>
+                <i data-lucide="x"></i>
+            </button>
+            <div class="settings-body">
+                <h2 id="settings-title" data-i18n="settingsTitle">Set up your OMDB API key</h2>
+                <p class="settings-desc" data-i18n="settingsDesc">OMDB requires a free personal API key. Grab one from omdbapi.com and paste it below — it's stored in your browser only.</p>
+
+                <form id="settings-form" class="settings-form">
+                    <label for="api-key-input" data-i18n="apiKeyLabel">OMDB API key</label>
+                    <input
+                        type="text"
+                        id="api-key-input"
+                        autocomplete="off"
+                        spellcheck="false"
+                        placeholder="e.g. a1b2c3d4"
+                        required
+                    >
+                    <div class="settings-actions">
+                        <a class="btn-outline" href="https://www.omdbapi.com/apikey.aspx" target="_blank" rel="noopener">
+                            <i data-lucide="external-link"></i>
+                            <span data-i18n="getKey">Get a free key</span>
+                        </a>
+                        <button type="submit" class="btn-primary">
+                            <i data-lucide="check"></i>
+                            <span data-i18n="saveKey">Save key</span>
+                        </button>
+                    </div>
+                </form>
+                <p class="settings-hint" data-i18n="settingsHint">Your key stays in localStorage and is never sent anywhere except OMDB.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
