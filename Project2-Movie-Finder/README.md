@@ -103,23 +103,7 @@ If I continued the project I'd add a favourites list (persisted to localStorage)
 | B. Code Quality | 5/5 | Clear section headers, small focused functions, `try/catch`, defensive null checks, no duplication |
 | C. UX & Accessibility | 5/5 | Responsive grid, ARIA roles/labels, focus restoration, `aria-live` status, Escape to close modal, reduced-motion support |
 | D. Data Handling | 4/4 | HTML escaping on every dynamic string, safe `localStorage` with try/catch, detail cache, graceful fallbacks for `N/A` values |
-| E. Documentation | 3/3 | Features, run steps for Win/macOS, architecture, limitations, reflection, self-assessment table, video timestamps |
+| E. Documentation | 3/3 | Features, run steps for Win/macOS, architecture, limitations, reflection, self-assessment table |
 | F. Deployment | 3/3 | Live GitHub Pages URL, consistent repo links, `.gitignore` in root |
-| G. Demo Video | 5/5 | Structured 5–6 min walkthrough: problem, code, demo, mobile view, reflection |
-| **Total** | **35/35** | |
-
-## Video
-
-*Link to be added after recording (Canvas / OneDrive / Loom).*
-
-### Timestamps
-
-| Time | Section |
-|------|---------|
-| 0:00 | Introduction |
-| 0:30 | Project overview & goals |
-| 1:00 | Code walkthrough — fetch + JSON error handling |
-| 2:30 | Live demo — search, filters, load more, detail modal |
-| 4:00 | Mobile view & bilingual toggle |
-| 4:45 | Reflection & what I learned |
-| 5:30 | End |
+| G. Demo Video | 0/5 | Not included in this submission |
+| **Total** | **30/35** | |
