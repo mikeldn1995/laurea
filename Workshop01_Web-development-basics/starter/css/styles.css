@@ -1,0 +1,107 @@
+/* =================================
+   CSS Styles for Workshop 01
+   ================================= */
+
+/* TODO Task 2: Add your general styles here */
+
+/* Reset and Base Styles */
+* {
+    /* Add your reset styles here (margin, padding, box-sizing) */
+
+}
+
+body {
+    /* Add body styles:  font-family, background-color, color, etc. */
+
+}
+
+/* TODO Task 2: Style your headings */
+h1 {
+    
+}
+
+h2 {
+    
+}
+
+/* TODO Task 2: Style your paragraphs */
+p {
+    
+}
+
+/* TODO Task 2: Style your images */
+img {
+    
+}
+
+/* TODO Task 3: Navigation Styles */
+nav {
+    
+}
+
+nav ul {
+    /* Remove bullets and style the list */
+}
+
+nav li {
+    /* Display items horizontally */
+}
+
+nav a {
+    /* Style the links */
+}
+
+nav a:hover {
+    /* Add hover effect */
+}
+
+/* Main Content Styles */
+main {
+    
+}
+
+section {
+    /* Add spacing between sections */
+}
+
+/* TODO Task 4: Form Styles */
+form {
+    
+}
+
+label {
+    
+}
+
+input,
+textarea {
+    /* Style form inputs */
+}
+
+button,
+input[type="submit"] {
+    /* Style the submit button */
+}
+
+button:hover,
+input[type="submit"]: hover {
+    /* Add hover effect for button */
+}
+
+/* Footer Styles */
+footer {
+    
+}
+
+/* TODO Task 5: Media Queries for Responsive Design */
+/* Tablet styles (optional) */
+@media (max-width: 768px) {
+    /* Add your tablet/mobile styles here */
+    
+}
+
+/* Mobile styles */
+@media (max-width:  480px) {
+    /* Add your mobile-specific styles here */
+    
+}
