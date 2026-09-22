@@ -1,0 +1,17 @@
+{
+  "name": "tuntiharjoitukset",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Workshop 03 Express examples",
+  "main": "example-1-task1-2.js",
+  "scripts": {
+    "start": "node example-1-task1-2.js",
+    "dev": "nodemon example-1-task1-2.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.3"
+  }
+}
