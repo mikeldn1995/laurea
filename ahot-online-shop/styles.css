@@ -109,4 +109,6 @@ figcaption{font-size:13px}
 @media print{.figure-grid{gap:16pt;margin:12pt 0 18pt}.figure-grid .full-width{max-width:145mm}h4{font-size:11pt;break-after:avoid}figcaption{font-size:8.5pt}.technical-evidence{font-size:9pt}.assessment-offer{background:white}}
 .report-meta div{grid-template-columns:90px 1fr}
 
-.assessment-scope{margin-top:22px;border-left:3px solid #ccc;padding-left:16px;font-size:14px;line-height:1.6}.assessment-scope ul{padding-left:22px;margin:0 0 14px}.assessment-scope li{margin-bottom:4px}
+.assessment-scope{margin-top:22px;border-left:3px solid #ccc;padding-left:16px;font-size:14px;line-height:1.6}.assessment-scope ul,.assessment-scope ol{padding-left:22px;margin:0 0 14px}.assessment-scope li{margin-bottom:4px}
+
+.competence-summary li{margin-bottom:10px}.competence-summary li:last-child{margin-bottom:0}.competence-summary li>a{color:var(--ink);text-decoration:none}.competence-summary li>a:hover{text-decoration:underline}

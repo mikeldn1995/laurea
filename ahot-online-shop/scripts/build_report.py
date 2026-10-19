@@ -18,15 +18,14 @@ INTRO = (
     "a hobby and side hustle. My coding knowledge is limited; AI assistance is central "
     "to how these projects were built. Please consider this work as evidence of prior learning."
 )
-GAPS = (
-    "Further evidence is needed: I have not built a WooCommerce or packaged shop, "
-    "measured marketing that drove Brandit token purchases, demonstrated shop-specific "
-    "product SEO/results, or analysed live paid-shop conversions. I welcome a supplementary "
-    "assignment addressing these gaps."
+MAPPING = (
+    "Together, these projects connect a digital credit shop, audience-focused content, "
+    "technical SEO, business-specific conversion analysis and supported customer journeys "
+    "to the five AHOT learning outcomes."
 )
 SECTIONS = [
     (
-        "Build an online shop and integrate it with a website",
+        "Building an online shop and integrating it with a website",
         "Brandit's public website, https://www.branditlondon.com/, presents branding, visibility "
         "and operations services and links to the client workspace and a free 30-minute call form. "
         "Token bundles are offered inside the practitioner workspace, through Stripe Checkout. "
@@ -34,19 +33,21 @@ SECTIONS = [
         "usable invoicing balance. The homepage does not advertise token bundles.",
     ),
     (
-        "Drive traffic to the online shop",
-        "Alicia's service/location pages and published articles support organic discovery. "
-        "Her website is recent, so meaningful SEO performance is not yet established. "
-        "Alexander's Cloudflare dashboard provides observed traffic for the analysis below.",
+        "Driving traffic to the online shop",
+        "Service, audience and location pages and published articles support organic "
+        "discovery and routes to an enquiry. Brandit's public offer links visitors to a call "
+        "request and client workspace. Alexander's traffic is analysed below. Alicia's recent "
+        "launch means SEO growth cannot yet be assessed.",
     ),
     (
-        "Optimise SEO for the online shop",
+        "Optimizing SEO for the online shop",
         "For Alicia's site, I used AI assistance to add page-specific titles and descriptions, "
         "canonical URLs, sitemap, robots rules and practice, practitioner and location "
-        "structured data. These demonstrate technical SEO implementation on a service website.",
+        "structured data. Brandit's public site also uses titles, descriptions, canonical "
+        "and sharing metadata. These are implemented foundations for search discovery.",
     ),
     (
-        "Analyse conversions across business models",
+        "Analyzing relevant conversions for various online businesses",
         "Alexander's Cloudflare Overview reported about 1.67k unique visitors and 21.6k "
         "requests for 19 September-19 October 2026. Its IP-based visitor count can include "
         "bots and is not verified human sessions. Resend showed four delivered emails for "
@@ -57,7 +58,7 @@ SECTIONS = [
         "sessions divided by distinct created checkout sessions in a dated cohort.",
     ),
     (
-        "Support the customer's buying process",
+        "Supporting the customer's buying process",
         "Brandit recommends sufficient tokens, shows prices and balances, and preserves "
         "prepared invoices during checkout. Verified payment triggers fulfilment. The service "
         "websites help visitors decide to enquire; Alexander's acknowledgement confirms "
@@ -65,10 +66,11 @@ SECTIONS = [
     ),
 ]
 CLOSING = (
-    "I kindly ask that my transferable experience be considered. I can provide a dedicated "
-    "Brandit demo account for live testing."
+    "I kindly ask that this practical experience be considered for recognition. I can "
+    "provide a dedicated Brandit demo account and complete a focused supplementary "
+    "task if further evidence is needed."
 )
-body_word_count = len(re.findall(r"\S+", " ".join([INTRO, GAPS, *[a + " " + b for a, b in SECTIONS], CLOSING])))
+body_word_count = len(re.findall(r"\S+", " ".join([INTRO, MAPPING, *[a + " " + b for a, b in SECTIONS], CLOSING])))
 assert body_word_count <= 500, body_word_count
 
 def report_markup(text):
@@ -100,7 +102,7 @@ footer{display:flex;justify-content:space-between;font-size:10px;color:#666;bord
 </style></head><body><nav class="toolbar" aria-label="Report controls"><a href="index.html">&larr; Back to case study</a><button onclick="window.print()">Print / save PDF</button></nav>
 <main class="paper"><header><h1>AHOT learning-outcomes report</h1><p class="module">Building Webpages with Online Shop Functionality<br>TO00CD61-3002 / 5 credits</p></header>
 <div class="meta"><span><strong>Michal Kowalczyk</strong></span><span>Prepared for Arvind Sharma</span><span>19 October 2026</span></div>
-<p class="intro">''' + escape(INTRO) + '</p><p class="intro">' + escape(GAPS) + '</p>' + html_sections + '<p class="scope">' + escape(CLOSING) + '''</p>
+<p class="intro">''' + escape(INTRO) + '</p><p class="intro">' + escape(MAPPING) + '</p>' + html_sections + '<p class="scope">' + escape(CLOSING) + '''</p>
 <footer><span>Projects: Brandit / Alicia Ferrero / Alexander Lajer</span><span>One-page learning-outcomes report</span></footer></main></body></html>'''
 (ROOT / "report.html").write_text(html, encoding="utf-8")
 
@@ -148,7 +150,7 @@ PDF.parent.mkdir(parents=True, exist_ok=True)
 doc = SimpleDocTemplate(str(PDF), pagesize=A4, rightMargin=17*mm, leftMargin=17*mm,
                         topMargin=54*mm, bottomMargin=23*mm,
                         title="AHOT report - Michal Kowalczyk", author="Michal Kowalczyk")
-story = [Paragraph(escape(INTRO), styles["intro"]), Paragraph(escape(GAPS), styles["intro"])]
+story = [Paragraph(escape(INTRO), styles["intro"]), Paragraph(escape(MAPPING), styles["intro"])]
 for i, (heading, text) in enumerate(SECTIONS, 1):
     table = Table([[Paragraph(f"{i}.", styles["num"]), [Paragraph(escape(heading), styles["heading"]), Paragraph(report_markup(text), styles["body"])]]], colWidths=[9*mm, 167*mm])
     table.setStyle(TableStyle([("VALIGN", (0,0),(-1,-1),"TOP"), ("LEFTPADDING",(0,0),(-1,-1),0), ("RIGHTPADDING",(0,0),(-1,-1),0), ("TOPPADDING",(0,0),(-1,-1),0), ("BOTTOMPADDING",(0,0),(-1,-1),0)]))

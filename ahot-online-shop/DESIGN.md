@@ -27,3 +27,7 @@ The report introduces Michal’s limited coding knowledge and AI-assisted websit
 ## Live Brandit evidence, 19 October
 
 The project list now links to the live BrandIt London business site. Three public-site captures bring the total to 22 inline figures: homepage/navigation, expanded service offer, and full discovery-call form. The report distinguishes this public acquisition and enquiry journey from credit purchasing inside the practitioner workspace. An opening note lists current evidence gaps and offers a supplementary assignment.
+
+## Competence-led framing, 19 October
+
+Replaced the prominent gaps list with a positive, linked summary addressing the five exact course requirements. Each claim is grounded in the existing implementation, content or analytics evidence. Measurement limits remain next to the relevant evidence; the supplementary-assignment offer is a short closing sentence. No outcomes, sales or traffic attribution are invented.
