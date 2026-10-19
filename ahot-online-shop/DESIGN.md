@@ -31,3 +31,7 @@ The project list now links to the live BrandIt London business site. Three publi
 ## Competence-led framing, 19 October
 
 Replaced the prominent gaps list with a positive, linked summary addressing the five exact course requirements. Each claim is grounded in the existing implementation, content or analytics evidence. Measurement limits remain next to the relevant evidence; the supplementary-assignment offer is a short closing sentence. No outcomes, sales or traffic attribution are invented.
+
+## Concise method disclosure, 19 October
+
+AI use is mentioned once in the introduction. Removed repeated AI wording from the project descriptions and course-outcome explanations. The email draft is shortened and links directly to the published report.

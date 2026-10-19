@@ -15,8 +15,8 @@ PDF = ROOT / "output/pdf/ahot-report.pdf"
 INTRO = (
     "Alongside my work as a project coordinator at a mental health clinic and my "
     "Laurea studies, I create websites for therapists and wellness professionals as "
-    "a hobby and side hustle. My coding knowledge is limited; AI assistance is central "
-    "to how these projects were built. Please consider this work as evidence of prior learning."
+    "a hobby and side hustle. I combine developing coding skills with AI tools to build "
+    "these projects. Please consider this work as evidence of prior learning."
 )
 MAPPING = (
     "Together, these projects connect a digital credit shop, audience-focused content, "
@@ -41,7 +41,7 @@ SECTIONS = [
     ),
     (
         "Optimizing SEO for the online shop",
-        "For Alicia's site, I used AI assistance to add page-specific titles and descriptions, "
+        "Alicia's site has page-specific titles and descriptions, "
         "canonical URLs, sitemap, robots rules and practice, practitioner and location "
         "structured data. Brandit's public site also uses titles, descriptions, canonical "
         "and sharing metadata. These are implemented foundations for search discovery.",
