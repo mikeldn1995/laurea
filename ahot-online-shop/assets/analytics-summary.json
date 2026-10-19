@@ -1,0 +1,139 @@
+{
+  "captured_on": "2026-10-19",
+  "cloudflare": {
+    "domain": "alexanderlajertherapy.com",
+    "view": "Overview / 30 Days",
+    "period_start": "2026-09-19",
+    "period_end": "2026-10-19",
+    "unique_visitors_display": "1.67k",
+    "requests_display": "21.6k",
+    "measurement_note": "Rounded dashboard figures. IP-based network traffic, not verified human sessions. Overview may include bots, partial requests and subrequests.",
+    "screenshot": "alexander-cloudflare-30days.jpg"
+  },
+  "resend": {
+    "domain": "alexanderlajertherapy.com",
+    "view": "Metrics / Last 15 days",
+    "period_start": "2026-10-05",
+    "period_end": "2026-10-19",
+    "emails": 4,
+    "delivered_emails": 4,
+    "therapist_intro_call_notifications": 2,
+    "visitor_acknowledgements": 2,
+    "interpretation": "Two request notifications, not four enquiries; not confirmed appointments or paying clients. No personal email addresses or message contents are included.",
+    "screenshot": "alexander-resend-metrics.jpg"
+  },
+  "conversion_rate": null,
+  "conversion_rate_note": "Not calculated: dashboard periods differ and the Cloudflare overview is not a matching human-session denominator.",
+  "figures": [
+    {
+      "number": 1,
+      "caption": "Brandit’s live public website. The homepage explains the offer and provides routes to an introductory call and client login. Public-site capture, 19 October 2026.",
+      "file": "brandit-public-home.jpg"
+    },
+    {
+      "number": 2,
+      "caption": "Dedicated Brandit assessment workspace. The same named operator, Michal Kowalczyk, is used throughout this walkthrough. The workspace opens directly into the invoicing service.",
+      "file": "brandit-assessment-dashboard.jpg"
+    },
+    {
+      "number": 3,
+      "caption": "Digital-credit offer and pricing. The application presents 1, 10 and 50-token options with total and per-invoice prices. This assessment simulation leaves checkout disabled.",
+      "file": "brandit-assessment-bundles.jpg"
+    },
+    {
+      "number": 4,
+      "caption": "Alexander’s Cloudflare traffic overview. Domain: alexanderlajertherapy.com. Selected period: 19 September–19 October 2026. Values are shown as rounded by Cloudflare; the account sidebar is collapsed.",
+      "file": "alexander-cloudflare-30days.jpg"
+    },
+    {
+      "number": 5,
+      "caption": "A clear audience, location and next step. The public homepage connects North London service positioning to a free introductory call.",
+      "file": "alexander-home.jpg"
+    },
+    {
+      "number": 6,
+      "caption": "Content tailored to a specific audience. The parent-focused page addresses visitor questions and links towards the contact journey.",
+      "file": "alexander-parent-page.jpg"
+    },
+    {
+      "number": 7,
+      "caption": "Explaining the offer before asking for an enquiry. The live service details describe visibility and operational support, with an introductory-call action in the navigation. These are offer descriptions, not evidence of campaign results.",
+      "file": "brandit-public-services.jpg"
+    },
+    {
+      "number": 8,
+      "caption": "Alicia’s service and location positioning. The homepage brings together relevant service wording, location and a visible contact route. Public-site capture from 18 October 2026.",
+      "file": "alicia-home.jpg"
+    },
+    {
+      "number": 9,
+      "caption": "A published article as a search entry point. “Holding the frame” has its own page title, description, canonical URL and BlogPosting structured data, checked on the live page.",
+      "file": "alicia-seo-article.jpg"
+    },
+    {
+      "number": 10,
+      "caption": "A dedicated service page. The children’s service page has a specific search title describing the service and London locations.",
+      "file": "alicia-service-page.jpg"
+    },
+    {
+      "number": 11,
+      "caption": "Alexander’s domain-filtered Resend metrics. Selected domain: alexanderlajertherapy.com; period: 5–19 October 2026. Four emails were delivered. Checking their types identifies two call-request notifications and two acknowledgements, rather than four enquiries.",
+      "file": "alexander-resend-metrics.jpg"
+    },
+    {
+      "number": 12,
+      "caption": "The therapist’s enquiry notification. Rendered from the project’s actual email-template function using Michal’s assessment scenario. This is a template simulation; no message was sent.",
+      "file": "alexander-enquiry-notification.jpg"
+    },
+    {
+      "number": 13,
+      "caption": "The visitor’s acknowledgement. The matching template addresses the same assessment user and confirms receipt. This second email belongs to the same enquiry, rather than creating another lead.",
+      "file": "alexander-enquiry-acknowledgement.jpg"
+    },
+    {
+      "number": 14,
+      "caption": "Preparing the invoice batch. Michal’s assessment workspace shows one Assessment Client, two dated £70 charges and a £140 total.",
+      "file": "brandit-assessment-compose.jpg"
+    },
+    {
+      "number": 15,
+      "caption": "Reviewing cost and token use. The final check shows the invoice total and the resulting token balance before sending. Sending remains disabled in the assessment simulation.",
+      "file": "brandit-assessment-review.jpg"
+    },
+    {
+      "number": 16,
+      "caption": "Previewing the invoice and recipient email. The same operator, client and £140 example carry through to the documents. All addresses and bank details are designated assessment examples.",
+      "file": "brandit-assessment-invoice-preview.jpg"
+    },
+    {
+      "number": 17,
+      "caption": "Providing a record after the transaction. A single synthetic prior invoice illustrates status visibility and PDF access. It is a demonstration record.",
+      "file": "brandit-assessment-history.jpg"
+    },
+    {
+      "number": 18,
+      "caption": "Brandit’s live discovery-call booking page. The public form shows the available steps, the no-payment explanation and an alternative contact route. The form is empty; no booking was submitted for this report.",
+      "file": "brandit-public-booking.jpg"
+    },
+    {
+      "number": 19,
+      "caption": "Choosing an introductory-call route. The visitor selects an audience and a provisional slot. The page explains what happens next.",
+      "file": "alexander-call-selection.jpg"
+    },
+    {
+      "number": 20,
+      "caption": "Collecting the details needed to respond. The second step asks for contact details and optional context. The form was not submitted; the Cloudflare success indicator refers to the browser check.",
+      "file": "alexander-call-details.jpg"
+    },
+    {
+      "number": 21,
+      "caption": "Offering an alternative to a call. Visitors can choose a message instead, reducing friction for people who prefer email. This screenshot shows an empty form.",
+      "file": "alexander-message-form.jpg"
+    },
+    {
+      "number": 22,
+      "caption": "Making fees and contact choices visible. Alicia’s contact page explains the fee range, response expectations and enquiry process. Public-site capture from 18 October 2026.",
+      "file": "alicia-contact.jpg"
+    }
+  ]
+}
